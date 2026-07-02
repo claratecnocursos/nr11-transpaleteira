@@ -7703,77 +7703,116 @@
       grid-template-columns: repeat(2, 1fr);
     }
 
-    #s2e .mod1-game-btn {
-      border: none;
-      border-radius: 16px;
-      padding: 14px 8px;
-      cursor: pointer;
-      font-family: var(--font-h);
-      font-weight: 800;
-      font-size: 10px;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: #fff;
-      transition: transform 0.2s, filter 0.2s;
-      line-height: 1.3;
+    #s2e .mod1-game-zones {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 24px;
+      width: 100%;
+      max-width: 100%;
     }
 
-    #s2e .mod1-game-btn span {
-      display: block;
-      font-size: 22px;
-      margin-bottom: 6px;
+    #s2e .mod1-game-btn {
+      display: flex;
+      align-items: center;
+      text-align: left;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 12px;
+      padding: 16px 20px;
+      color: #ffffff;
+      font-family: var(--font-p);
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0;
+      text-transform: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      width: 100%;
+      box-shadow: none;
+    }
+
+    #s2e .mod1-game-btn:hover:not(:disabled) {
+      background: rgba(23, 195, 178, 0.08);
+      border-color: rgba(23, 195, 178, 0.4);
+      transform: translateX(4px);
+    }
+
+    #s2e .mod1-game-btn .opt-letter {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      font-family: var(--font-h);
+      font-weight: 850;
+      font-size: 14px;
+      margin-right: 15px;
+      color: #17c3b2;
+      flex-shrink: 0;
+    }
+
+    #s2e .mod1-game-btn:hover .opt-letter {
+      background: #17c3b2;
+      color: #ffffff;
+    }
+
+    #s2e .mod1-game-btn.correct-option {
+      background: rgba(40, 167, 69, 0.15) !important;
+      border-color: rgba(40, 167, 69, 0.5) !important;
+      color: #ffffff !important;
+    }
+
+    #s2e .mod1-game-btn.correct-option .opt-letter {
+      background: #28a745 !important;
+      color: #ffffff !important;
+    }
+
+    #s2e .mod1-game-btn.incorrect-option {
+      background: rgba(220, 53, 69, 0.15) !important;
+      border-color: rgba(220, 53, 69, 0.5) !important;
+      color: rgba(255, 255, 255, 0.6) !important;
+    }
+
+    #s2e .mod1-game-btn.incorrect-option .opt-letter {
+      background: #dc3545 !important;
+      color: #ffffff !important;
     }
 
     #s2e .mod1-game-btn:active:not(:disabled) {
-      transform: scale(0.96);
+      transform: scale(0.98);
     }
 
     #s2e .mod1-game-btn:disabled {
-      opacity: 0.55;
+      opacity: 0.65;
       cursor: not-allowed;
     }
 
-    #s2e .mod1-game-btn.zone-fuel {
-      background: linear-gradient(145deg, #c0392b, #e74c3c);
-      box-shadow: 0 8px 20px rgba(231, 76, 60, 0.25);
+    #s2e .mod1-game-feedback {
+      margin-top: 15px;
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-family: var(--font-p);
+      font-size: 14.5px;
+      line-height: 1.55;
+      text-align: center;
+      display: none;
     }
 
-    #s2e .mod1-game-btn.zone-oxidizer {
-      background: linear-gradient(145deg, #2471a3, #3498db);
-      box-shadow: 0 8px 20px rgba(52, 152, 219, 0.25);
+    #s2e .mod1-game-feedback.ok {
+      background: rgba(40, 167, 69, 0.12);
+      border: 1px solid rgba(40, 167, 69, 0.3);
+      color: #2bba49;
     }
 
-    #s2e .mod1-game-btn.zone-energy {
-      background: linear-gradient(145deg, #d68910, #f1c40f);
-      box-shadow: 0 8px 20px rgba(241, 196, 15, 0.25);
-      color: #1a1a1a;
+    #s2e .mod1-game-feedback.err {
+      background: rgba(220, 53, 69, 0.12);
+      border: 1px solid rgba(220, 53, 69, 0.3);
+      color: #dc3545;
     }
 
-    #s2e .mod1-game-btn.zone-chain {
-      background: linear-gradient(145deg, var(--red-dk), var(--red));
-      box-shadow: 0 8px 20px rgba(23, 195, 178, 0.3);
-    }
-
-    #s2e .mod1-game-btn.zone-gas {
-      background: linear-gradient(145deg, #1a5276, #5dade2);
-      box-shadow: 0 8px 20px rgba(93, 173, 226, 0.25);
-    }
-
-    #s2e .mod1-game-btn.zone-mist {
-      background: linear-gradient(145deg, #566573, #95a5a6);
-      box-shadow: 0 8px 20px rgba(149, 165, 166, 0.25);
-    }
-
-    #s2e .mod1-game-btn.zone-dust {
-      background: linear-gradient(145deg, #784212, #dc7633);
-      box-shadow: 0 8px 20px rgba(220, 118, 51, 0.25);
-    }
-
-    #s2e .mod1-game-btn.zone-prevention {
-      background: linear-gradient(145deg, #9a7d0a, #f4d03f);
-      box-shadow: 0 8px 20px rgba(244, 208, 63, 0.25);
-      color: #1a1a1a;
-    }
 
     #s2e .mod1-game-hint {
       text-align: center;
@@ -7838,8 +7877,8 @@
       }
 
       #s2e .content-area.mod1-state-play {
-        padding-top: 16px !important;
-        padding-bottom: 140px !important;
+        padding-top: 10px !important;
+        padding-bottom: 90px !important;
       }
 
       #s2e .mod1-game-wrap {
@@ -7907,52 +7946,88 @@
         height: 12px !important;
       }
 
+      #s2e #mod1-game-play {
+        max-width: 800px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: 100% !important;
+      }
+
       #s2e .mod1-game-card {
-        min-height: 170px;
-        padding: 36px 44px;
-        border-radius: 28px;
-        margin-bottom: 24px;
+        min-height: auto !important;
+        padding: 20px 32px !important;
+        border-radius: 20px !important;
+        margin-bottom: 16px !important;
+        width: 100% !important;
+        max-width: none !important;
       }
 
       #s2e .mod1-game-text {
-        font-size: 26px;
-        line-height: 1.45;
-        max-width: 880px;
+        font-size: 20px !important;
+        line-height: 1.4 !important;
+        max-width: 100% !important;
         margin: 0 auto;
       }
 
       #s2e .mod1-game-zones {
-        gap: 16px;
-        grid-template-columns: repeat(4, 1fr);
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 16px 0 0 !important;
       }
 
       #s2e .mod1-game-btn {
-        padding: 20px 10px;
-        font-size: 13px;
-        border-radius: 20px;
-        min-height: 100px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 16px !important;
+        padding: 12px 24px !important;
+        border-radius: 16px !important;
+        min-height: 52px !important;
+        font-size: 14.5px !important;
+        text-align: left !important;
+        width: 100% !important;
       }
 
       #s2e .mod1-game-btn span {
-        font-size: 40px;
-        margin-bottom: 12px;
+        font-size: 14.5px !important;
+        margin-bottom: 0 !important;
       }
 
+      #s2e .mod1-game-btn .opt-letter {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 30px !important;
+        height: 30px !important;
+        border-radius: 50% !important;
+        font-family: var(--font-h) !important;
+        font-weight: 850 !important;
+        font-size: 13.5px !important;
+        margin-right: 0 !important;
+        flex-shrink: 0 !important;
+        color: #17c3b2 !important;
+      }
+
+      #s2e .mod1-game-btn span.opt-letter {
+        font-size: 13.5px !important;
+      }
       #s2e .mod1-game-hint {
-        font-size: 15px;
-        margin-top: 20px;
+        font-size: 14px !important;
+        margin-top: 14px !important;
       }
 
       #s2e .mod1-game-feedback {
-        font-size: 17px;
-        min-height: 48px;
-        margin-top: 18px;
+        font-size: 15px !important;
+        min-height: 40px !important;
+        margin-top: 12px !important;
+        width: 100% !important;
+        max-width: none !important;
+        box-sizing: border-box !important;
       }
-
       #s2e #mod1-game-result {
         padding: 48px 56px !important;
         max-width: 820px;
@@ -9545,62 +9620,32 @@
             <div class="sum-item">
               <div class="sum-num-big">Módulo 1</div>
               <div class="sum-text">Fundamentos, Legislação e Requisitos</div>
-              <ul class="sum-bullets">
-                <li>Objetivo do Treinamento</li>
-                <li>Introdução à NR 11</li>
-                <li>Requisitos do Operador</li>
-                <li>Documentação e Habilitação</li>
-              </ul>
+              
             </div>
             <div class="sum-item">
               <div class="sum-num-big">Módulo 2</div>
               <div class="sum-text">Conhecendo o Equipamento</div>
-              <ul class="sum-bullets">
-                <li>Tipos de Transpaleteiras</li>
-                <li>Capacidades Técnicas</li>
-                <li>Componentes Principais</li>
-                <li>Painel de Controle e O "Timão"</li>
-              </ul>
+              
             </div>
             <div class="sum-item">
               <div class="sum-num-big">Módulo 3</div>
               <div class="sum-text">Procedimentos Operacionais e Operação Segura</div>
-              <ul class="sum-bullets">
-                <li>Inspeção Pré-uso</li>
-                <li>Regras de Trânsito Interno</li>
-                <li>Postura e Visibilidade</li>
-                <li>Estacionamento Seguro</li>
-              </ul>
+              
             </div>
             <div class="sum-item">
               <div class="sum-num-big">Módulo 4</div>
               <div class="sum-text">Movimentação, Cargas e Armazenamento</div>
-              <ul class="sum-bullets">
-                <li>Estabilidade da Carga</li>
-                <li>Transporte em Rampas</li>
-                <li>Tipos de Paletes e Cargas</li>
-                <li>Regras de Empilhamento e Solo</li>
-              </ul>
+              
             </div>
             <div class="sum-item">
               <div class="sum-num-big">Módulo 5</div>
               <div class="sum-text">Manutenção e Segurança com Baterias</div>
-              <ul class="sum-bullets">
-                <li>Manutenção Preventiva</li>
-                <li>Troca de Bateria</li>
-                <li>Gestão da Recarga</li>
-                <li>Riscos Químicos</li>
-              </ul>
+              
             </div>
             <div class="sum-item">
               <div class="sum-num-big">Módulo 6</div>
               <div class="sum-text">Gestão de Riscos, Emergências e EPIs</div>
-              <ul class="sum-bullets">
-                <li>Equipamentos de Proteção (EPI)</li>
-                <li>Principais Riscos de Acidente</li>
-                <li>Ações em Emergência</li>
-                <li>Proibições Críticas</li>
-              </ul>
+              
             </div>
           </div>
         </div>
@@ -9625,149 +9670,176 @@
           </svg></div>
       </section>
 
-      <!-- ── S2b: CONTEÚDO — Área Classificada e ATEX ── -->
-      <section class="slide" id="s2b">
-        <div class="top-bar"><span class="section-tag">📚 Fundamentos</span>
-          <div class="slide-title" style="margin-top:6px">O que é uma <span>Área Classificada?</span></div>
-        </div>
-        <div class="content-area s3-gap-fix pemt-intro-content">
-          <div class="pemt-intro-wrap">
-            <div class="icon-card pemt-intro-card atex-hero-card">
-              <div class="atex-hero-inner">
-                <div class="atex-hero-text">
-                  <div class="atex-hero-head">
-                    <div class="ic-circle">⚠️</div>
-                    <h4>Área Classificada e Atmosfera Explosiva</h4>
-                  </div>
-                  <p class="atex-intro-lead">Uma <strong>área classificada</strong> é qualquer local no ambiente de
-                    trabalho que apresente ou possa apresentar uma <strong>mistura perigosa de substâncias inflamáveis
-                      com o ar</strong>.</p>
-                  <p class="atex-intro-lead">Essa mistura, chamada de <strong>Atmosfera Explosiva</strong>, pode se
-                    formar devido à presença de gases, vapores, névoas, poeiras ou fibras combustíveis.</p>
-                </div>
-                <figure class="atex-symbol-figure">
-                  <img src="img/simbolo.png" alt="Símbolo ATEX — triângulo amarelo EX">
-                  <figcaption>Sinal EX</figcaption>
-                </figure>
-              </div>
-            </div>
-
-            <div class="atex-sources-carousel" id="atex-sources-carousel">
-              <div class="atex-sources-container" id="atex-sources-container">
-                <div class="atex-source-card atex-source-active req-item" role="button" tabindex="0"
-                  aria-expanded="false">
-                  <div class="atex-source-flip">
-                    <div class="atex-source-face atex-source-front">
-                      <div class="atex-source-icon">💨</div>
-                      <h4>Gases e Vapores</h4>
-                      <span class="atex-source-touch-hint"><span class="atex-touch-icon" aria-hidden="true">👆</span>
-                        Toque para revelar</span>
-                    </div>
-                    <div class="atex-source-face atex-source-back">
-                      <p class="atex-source-back-def">Substâncias inflamáveis em estado gasoso ou vaporizado misturadas
-                        ao ar.</p>
-                      <div class="atex-source-examples">
-                        <span class="atex-ex-group-label">Exemplos</span>
-                        <div class="atex-ex-chips">
-                          <span class="atex-ex-chip">Vapor de gasolina</span>
-                          <span class="atex-ex-chip">Vapor de etanol</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="atex-source-card req-item" role="button" tabindex="0" aria-expanded="false">
-                  <div class="atex-source-flip">
-                    <div class="atex-source-face atex-source-front">
-                      <div class="atex-source-icon">🌫️</div>
-                      <h4>Névoas</h4>
-                      <span class="atex-source-touch-hint"><span class="atex-touch-icon" aria-hidden="true">👆</span>
-                        Toque para revelar</span>
-                    </div>
-                    <div class="atex-source-face atex-source-back">
-                      <p class="atex-source-back-def">Gotículas finas suspensas no ar capazes de formar atmosfera
-                        explosiva.</p>
-                      <div class="atex-source-examples">
-                        <span class="atex-ex-group-label">Exemplos</span>
-                        <div class="atex-ex-chips">
-                          <span class="atex-ex-chip">Névoa de diesel</span>
-                          <span class="atex-ex-chip">Névoa de querosene</span>
-                          <span class="atex-ex-chip">Névoa de solventes inflamáveis pulverizados</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="atex-source-card req-item" role="button" tabindex="0" aria-expanded="false">
-                  <div class="atex-source-flip">
-                    <div class="atex-source-face atex-source-front">
-                      <div class="atex-source-icon">🧱</div>
-                      <h4>Poeiras e Fibras</h4>
-                      <span class="atex-source-touch-hint"><span class="atex-touch-icon" aria-hidden="true">👆</span>
-                        Toque para revelar</span>
-                    </div>
-                    <div class="atex-source-face atex-source-back">
-                      <p class="atex-source-back-def">Partículas sólidas combustíveis que, em concentração, podem
-                        explodir.</p>
-                      <div class="atex-source-examples">
-                        <div class="atex-ex-group">
-                          <span class="atex-ex-group-label">Poeiras</span>
-                          <div class="atex-ex-chips">
-                            <span class="atex-ex-chip">Poeira de farinha de trigo</span>
-                            <span class="atex-ex-chip">Poeira de açúcar</span>
-                          </div>
-                        </div>
-                        <div class="atex-ex-group">
-                          <span class="atex-ex-group-label">Fibras</span>
-                          <div class="atex-ex-chips">
-                            <span class="atex-ex-chip">Fibras de madeira</span>
-                            <span class="atex-ex-chip">Fibras de papel/celulose</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="atex-sources-nav">
-                <button type="button" class="atex-sources-btn" id="btn-atex-sources-prev" aria-label="Tipo anterior">
-                  <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
-                    <polygon points="15,3 3,10 15,17" />
-                  </svg>
-                </button>
-                <div class="atex-sources-counter" id="atex-sources-counter">1 / 3</div>
-                <button type="button" class="atex-sources-btn" id="btn-atex-sources-next" aria-label="Próximo tipo">
-                  <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
-                    <polygon points="5,3 17,10 5,17" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,60 C360,20 720,90 1080,35 C1260,10 1380,70 1440,55 L1440,100 L0,100 Z"
-              fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S2c: VÍDEO — Tetraedro do Fogo ── -->
-      <section class="slide video-slide" id="s2c">
+      <!-- ── S2b: VÍDEO — A Norma NR 11 e os Equipamentos Motorizados ── -->
+      <section class="slide video-slide" id="s2b">
         <div class="top-bar">
           <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Legislação e <span>Requisitos</span></div>
-            <div class="slide-subtitle">Fundamentos de Atmosferas Explosivas (ATEX)</div>
+            <div class="slide-title" style="margin-top:6px">A Norma NR 11 e os <span>Equipamentos Motorizados</span></div>
+            <div class="slide-subtitle">Fundamentos, Legislação e Requisitos</div>
           </div>
         </div>
         <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
           <div class="video-wrap">
             <div class="video-box">
               <iframe
-                src="https://player.vimeo.com/video/1202850599?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&dnt=1"
+                src="https://player.vimeo.com/video/1206130559?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&dnt=1"
                 frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
                 style="position:absolute;top:0;left:0;width:100%;height:100%;"
-                title="Tetraedro do Fogo — NR11 - OPERADOR DE TRANSPALETEIRA">
+                title="A Norma NR 11 e os Equipamentos Motorizados — NR11 - OPERADOR DE TRANSPALETEIRA">
+              </iframe>
+            </div>
+          </div>
+        </div>
+        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
+          </svg></div>
+      </section>
+
+      <!-- ── S2b2: VÍDEO — Habilitação e o Cartão de Identificação ── -->
+      <section class="slide video-slide" id="s2b2">
+        <div class="top-bar">
+          <div><span class="section-tag">📹 Vídeo</span>
+            <div class="slide-title" style="margin-top:6px">Habilitação e o <span>Cartão de Identificação</span></div>
+            <div class="slide-subtitle">Fundamentos, Legislação e Requisitos</div>
+          </div>
+        </div>
+        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
+          <div class="video-wrap">
+            <div class="video-box">
+              <iframe
+                src="https://player.vimeo.com/video/1206217098?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&dnt=1"
+                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                title="Habilitação e o Cartão de Identificação — NR11 - OPERADOR DE TRANSPALETEIRA">
+              </iframe>
+            </div>
+          </div>
+        </div>
+        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
+          </svg></div>
+      </section>
+
+      <!-- ── S2b3: CONTEÚDO — O Cartão de Identificação ── -->
+      <section class="slide" id="s2b3">
+        <style>
+          @keyframes floatBadge {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(1deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+          }
+          .floating-badge {
+            animation: floatBadge 5s ease-in-out infinite;
+          }
+        </style>
+        <div class="top-bar">
+          <span class="section-tag">📋 Legislação</span>
+          <div class="slide-title" style="margin-top:6px">O Cartão de <span>Identificação</span></div>
+        </div>
+        <div class="content-area" style="display:grid; grid-template-columns: 1.3fr 1fr; gap: 50px; align-items: center; max-width: 1100px; margin: 0 auto; padding: 0 20px;">
+          <!-- Left side: Text -->
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; padding: 45px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); animation: slideRight 0.8s ease;">
+            <div style="display:flex; align-items:center; gap:12px; margin-bottom:24px;">
+              <span style="background:rgba(23, 195, 178, 0.12); color:#17c3b2; border:1px solid rgba(23, 195, 178, 0.25); padding:6px 14px; border-radius:100px; font-size:12px; font-weight:700; letter-spacing:0.5px; font-family:var(--font-h)">ITEM 11.1.6 (NR-11)</span>
+            </div>
+            <p style="font-family: var(--font-p); font-size: clamp(20px, 2.2vw, 25px); line-height: 1.8; color: rgba(255, 255, 255, 0.95); margin: 0; font-weight: 500;">
+              "Os operadores de equipamentos de transporte motorizado deverão ser habilitados e só poderão dirigir se durante o horário de trabalho portarem um <strong>cartão de identificação</strong>, com o <strong>nome</strong> e <strong>fotografia</strong>, em lugar visível."
+            </p>
+            <div style="height: 3px; width: 80px; background: #17c3b2; border-radius: 3px; margin-top: 30px;"></div>
+          </div>
+
+          <!-- Right side: Badge Mockup -->
+          <div class="floating-badge" style="display:flex; justify-content:center; align-items:center; transition: transform 0.8s ease;">
+            <div class="id-card" style="width: 320px; height: 490px; background: #ffffff; border-radius: 24px; box-shadow: 0 25px 60px rgba(0,0,0,0.5); display: flex; flex-direction: column; position: relative; overflow: hidden; color: #1a1f2e; border: 4px solid #17c3b2;">
+              <!-- Card Clip Slot -->
+              <div style="width: 60px; height: 12px; background: #cbd5e0; border-radius: 6px; margin: 15px auto 0; box-shadow: inset 0 2px 4px rgba(0,0,0,0.15);"></div>
+              
+              <!-- Header -->
+              <div style="padding: 15px 22px 5px; display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+                <!-- Logo -->
+                <img src="img/NOVA LOGO TECNOCURSOS 1.png" style="max-height: 28px; width: auto; object-fit: contain;" alt="TecnoCursos Logo">
+                
+                <!-- Operator Seal -->
+                <div style="width: 36px; height: 36px; background: #1a1f2e; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #ffc837; box-shadow: 0 3px 8px rgba(0,0,0,0.15); flex-shrink: 0;">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#ffc837" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="3" width="15" height="13" rx="2" ry="2" />
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                    <circle cx="5.5" cy="18.5" r="2.5" />
+                    <circle cx="14" cy="18.5" r="2.5" />
+                  </svg>
+                </div>
+              </div>
+              
+              <!-- Title -->
+              <div style="text-align: center; margin-top: 6px;">
+                <span style="font-family: var(--font-h); font-size: 11px; font-weight: 800; letter-spacing: 1.5px; color: #718096; text-transform: uppercase;">Operador Autorizado</span>
+              </div>
+              
+              <!-- Photo Container -->
+              <div style="margin: 15px auto; width: 135px; height: 160px; border-radius: 16px; overflow: hidden; border: 2px solid #e2e8f0; background: #edf2f7; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(0,0,0,0.08); position: relative;">
+                <img src="img/3x4.png" style="width: 100%; height: 100%; object-fit: cover;" alt="Foto do Operador">
+              </div>
+              
+              <!-- Footer Info -->
+              <div style="margin-top: auto; display: flex; flex-direction: column;">
+                <!-- Name Bar -->
+                <div style="background: linear-gradient(135deg, #17c3b2, #129588); color: #ffffff; text-align: center; padding: 12px 8px; font-family: var(--font-h); font-weight: 850; font-size: 18px; letter-spacing: 0.5px; text-transform: uppercase;">
+                  Jose Carlos
+                </div>
+                
+                <!-- Extra Fields & Barcode -->
+                <div style="background: #f7fafc; padding: 12px 22px 16px; display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #e2e8f0;">
+                  <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 10px; font-size: 12px; font-family: var(--font-p);">
+                    <div>
+                      <span style="color: #a0aec0; display: block; font-size: 9px; font-weight: 750; text-transform: uppercase; letter-spacing: 0.5px;">Chapa</span>
+                      <strong style="color: #2d3748; font-size: 13px;">23078</strong>
+                    </div>
+                    <div>
+                      <span style="color: #a0aec0; display: block; font-size: 9px; font-weight: 750; text-transform: uppercase; letter-spacing: 0.5px;">Setor</span>
+                      <strong style="color: #2d3748; font-size: 13px;">Expedição</strong>
+                    </div>
+                  </div>
+                  
+                  <!-- Barcode Simulation -->
+                  <div style="display: flex; justify-content: center; align-items: center; gap: 2.5px; height: 20px; margin-top: 6px; opacity: 0.7;">
+                    <div style="width: 2px; height: 100%; background: #1a1f2e;"></div>
+                    <div style="width: 1px; height: 100%; background: #1a1f2e;"></div>
+                    <div style="width: 3px; height: 100%; background: #1a1f2e;"></div>
+                    <div style="width: 1px; height: 100%; background: #1a1f2e;"></div>
+                    <div style="width: 2px; height: 100%; background: #1a1f2e;"></div>
+                    <div style="width: 4px; height: 100%; background: #1a1f2e;"></div>
+                    <div style="width: 1px; height: 100%; background: #1a1f2e;"></div>
+                    <div style="width: 2px; height: 100%; background: #1a1f2e;"></div>
+                    <div style="width: 3px; height: 100%; background: #1a1f2e;"></div>
+                    <div style="width: 1px; height: 100%; background: #1a1f2e;"></div>
+                    <div style="width: 2px; height: 100%; background: #1a1f2e;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
+          </svg></div>
+      </section>
+
+      <!-- ── S2c: VÍDEO — Validade do Cartão e Responsabilidade do Operador ── -->
+      <section class="slide video-slide" id="s2c">
+        <div class="top-bar">
+          <div><span class="section-tag">📹 Vídeo</span>
+            <div class="slide-title" style="margin-top:6px">Validade do Cartão e <span>Responsabilidade do Operador</span></div>
+            <div class="slide-subtitle">Fundamentos, Legislação e Requisitos</div>
+          </div>
+        </div>
+        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
+          <div class="video-wrap">
+            <div class="video-box">
+              <iframe
+                src="https://player.vimeo.com/video/1206445169?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&dnt=1"
+                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                title="Validade do Cartão e Responsabilidade do Operador — NR11 - OPERADOR DE TRANSPALETEIRA">
               </iframe>
             </div>
           </div>
@@ -9778,23 +9850,138 @@
       </section>
 
       <!-- ── S2d: VÍDEO — Atmosfera Explosiva ── -->
-      <section class="slide video-slide" id="s2d">
+      <section class="slide" id="s2d">
+        <style>
+          .req-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+          }
+          .req-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 40px 35px;
+            min-height: 280px;
+            text-align: left;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+          }
+          .req-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(23, 195, 178, 0.5);
+            box-shadow: 0 25px 50px rgba(23, 195, 178, 0.2);
+          }
+          .req-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #17c3b2, #129588);
+            opacity: 0.9;
+          }
+          .req-card-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(23, 195, 178, 0.1);
+            border: 1px solid rgba(23, 195, 178, 0.25);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #17c3b2;
+            transition: all 0.3s;
+          }
+          .req-card:hover .req-card-icon {
+            background: #17c3b2;
+            color: #ffffff;
+            box-shadow: 0 0 18px rgba(23, 195, 178, 0.55);
+          }
+          .req-card-title {
+            font-family: var(--font-h);
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+          }
+          .req-card-text {
+            font-family: var(--font-p);
+            font-size: 16.5px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.75);
+          }
+        </style>
         <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Atmosfera <span>Explosiva</span></div>
-            <div class="slide-subtitle">Fundamentos de Atmosferas Explosivas (ATEX)</div>
-          </div>
+          <span class="section-tag">📋 Diretrizes da NR-11</span>
+          <div class="slide-title" style="margin-top:6px">Requisitos para <span>Operação</span></div>
         </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe
-                src="https://player.vimeo.com/video/1202901113?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&dnt=1"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;"
-                title="Atmosfera Explosiva — NR11 - OPERADOR DE TRANSPALETEIRA">
-              </iframe>
+        <div class="content-area" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap: 40px; width:100%; max-width:1250px; margin:0 auto; padding-top: 15px;">
+          <!-- Intro text -->
+          <p style="font-family: var(--font-p); font-size: 22px; color: rgba(255, 255, 255, 0.9); text-align: center; margin: 0 0 8px; font-weight: 500;">
+            De acordo com a norma regulamentadora, o operador de equipamentos de transporte motorizado deverá:
+          </p>
+
+          <!-- Card Grid -->
+          <div class="req-grid">
+            <!-- Card 1 -->
+            <div class="req-card">
+              <div class="req-card-icon">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                </svg>
+              </div>
+              <div class="req-card-title">Aptidão Médica</div>
+              <div class="req-card-text">
+                Estar devidamente <strong>apto do ponto de vista médico</strong> (saúde física e mental atestada por exames ocupacionais específicos).
+              </div>
             </div>
+
+            <!-- Card 2 -->
+            <div class="req-card">
+              <div class="req-card-icon">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                </svg>
+              </div>
+              <div class="req-card-title">Treinamento</div>
+              <div class="req-card-text">
+                Ter participado com aproveitamento de <strong>treinamento teórico e prático</strong> específico para a condução do equipamento.
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="req-card">
+              <div class="req-card-icon">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="23 4 23 10 17 10" />
+                  <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
+                </svg>
+              </div>
+              <div class="req-card-title">Reciclagem</div>
+              <div class="req-card-text">
+                Participar de <strong>reciclagens anuais</strong> para renovação das orientações de segurança e atualização de competências.
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Alert warning block -->
+          <div style="display: flex; align-items: center; gap: 20px; background: rgba(255, 200, 55, 0.08); border: 1px solid rgba(255, 200, 55, 0.25); border-radius: 16px; padding: 16px 30px; max-width: 750px; margin-top: 20px;">
+            <span style="font-size: 24px;">⚠️</span>
+            <span style="font-family: var(--font-p); font-size: 15px; color: #ffc837; font-weight: 500; text-align: left; line-height: 1.55;">
+              <strong>Atenção:</strong> O não cumprimento de qualquer um destes requisitos impede o operador de conduzir transpaleteiras na planta.
+            </span>
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
@@ -9802,7 +9989,8 @@
           </svg></div>
       </section>
 
-      <!-- ── S2e: DESAFIO — Tetraedro & Atmosferas (Módulo 1) ── -->
+
+            <!-- ── S2e: DESAFIO — Tetraedro & Atmosferas (Módulo 1) ── -->
       <section class="slide" id="s2e">
         <div class="top-bar">
           <span class="section-tag">🎮 DESAFIO</span>
@@ -9811,11 +9999,11 @@
         <div class="content-area mod1-state-intro">
 
           <div id="mod1-game-intro" class="mod1-game-wrap" style="text-align:center; animation: fadeIn 0.8s ease;">
-            <div class="ic-circle" style="margin: 0 auto 24px; width: 96px; height: 96px; font-size: 48px;">🔺</div>
+            <div class="ic-circle" style="margin: 0 auto 24px; width: 96px; height: 96px; font-size: 48px;">🎮</div>
             <h3 style="font-family:var(--font-h); font-size:26px; color:var(--white); margin-bottom:12px;">
-              Desafio NR-11 — Módulo 1</h3>
-            <p style="color:rgba(255,255,255,0.72); font-size:15px; line-height:1.65; margin-bottom:28px;">
-              Classifique <strong>4 conceitos</strong> nas áreas fundamentais de: Objetivo, NR 11, Requisitos e Habilitação.
+              Quiz NR-11 — Módulo 1</h3>
+            <p style="color:rgba(255,255,255,0.72); font-size:16px; line-height:1.65; margin-bottom:28px; max-width: 600px; margin-left: auto; margin-right: auto;">
+              Responda a <strong>3 perguntas rápidas</strong> sobre os conceitos legais do Módulo 1 e valide seu aprendizado!
             </p>
             <button class="btn-start" style="padding: 16px 40px; font-size: 15px; text-transform: uppercase;"
               onclick="startMod1Game()">INICIAR DESAFIO</button>
@@ -9826,13 +10014,11 @@
               <div
                 style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:8px; flex-wrap:wrap; gap:8px;">
                 <div>
-                  <div class="mod1-phase-badge" id="mod1-game-phase-tag">Legislação e Requisitos</div>
                   <span class="mod1-game-label"
-                    style="font-family:var(--font-h); font-size:11px; font-weight:700; color:var(--red); letter-spacing:1px; text-transform:uppercase; display:block;">Classifique
-                    a situação</span>
+                    style="font-family:var(--font-h); font-size:11px; font-weight:700; color:var(--red); letter-spacing:1px; text-transform:uppercase; display:block;">Selecione a resposta correta</span>
                 </div>
                 <span id="mod1-game-counter" class="mod1-game-counter"
-                  style="font-family:var(--font-h); font-size:14px; font-weight:700; color:var(--white);">1 / 4</span>
+                  style="font-family:var(--font-h); font-size:14px; font-weight:700; color:var(--white);">1 / 3</span>
               </div>
               <div class="game-progress"
                 style="height: 8px; background: rgba(255,255,255,0.05); border-radius: 4px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
@@ -9842,12 +10028,12 @@
               </div>
             </div>
 
-            <div id="mod1-game-card" class="mod1-game-card">
-              <p id="mod1-game-text" class="mod1-game-text">...</p>
+            <div id="mod1-game-card" class="mod1-game-card" style="margin-bottom: 20px; padding: 24px; border-radius: 16px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);">
+              <p id="mod1-game-text" class="mod1-game-text" style="font-family: var(--font-h); font-size: 18px; font-weight: 700; color: #ffffff; text-align: center; margin: 0; line-height: 1.45;">...</p>
             </div>
 
             <div id="mod1-game-zones" class="mod1-game-zones"></div>
-            <p class="mod1-game-hint">Toque na opção correta para avançar</p>
+            <p class="mod1-game-hint" style="text-align: center; font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 15px;">Escolha a opção correspondente para avançar</p>
             <div id="mod1-game-feedback" class="mod1-game-feedback"></div>
           </div>
 
@@ -9856,7 +10042,7 @@
             <div class="r-icon" style="font-size: 56px; margin-bottom: 12px;">🏅</div>
             <h3
               style="font-family:var(--font-h); font-size: clamp(24px, 5vw, 30px); color:var(--gold); margin-bottom:8px; font-weight:900;">
-              Desafio Concluído!</h3>
+              Quiz Concluído!</h3>
             <div class="r-status ap"
               style="display:inline-block; padding: 6px 18px; font-size: 13px; margin-bottom:12px; font-weight:700;">
               Módulo 1 — Fundamentos Validados
@@ -9873,1627 +10059,7 @@
             <path d="M0,50 C480,10 960,85 1440,30 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
           </svg></div>
       </section>
-
-      <!-- ── MÓDULO 2 INTRO ── -->
-      <section class="slide mod-intro-slide" id="s-mod2">
-        <div class="content-area mod-intro-area">
-          <div class="mod-intro-inner">
-            <div class="mod-intro-badge">Início do Módulo</div>
-            <div class="mod-intro-title">MÓDULO 2</div>
-            <div class="mod-intro-sub">Conhecendo o Equipamento</div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,65 C360,20 720,90 1080,40 C1260,15 1390,70 1440,60 L1440,100 L0,100 Z"
-              fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S3a: Classificação Elétrica de Área (Módulo 2) ── -->
-      <section class="slide" id="s3a">
-        <div class="top-bar">
-          <span class="section-tag">📚 Classificação</span>
-          <div class="slide-title" style="margin-top:6px">Método de <span>Classificação Elétrica</span></div>
-        </div>
-        <div class="content-area s3a-content">
-          <div class="s3a-wrap">
-
-            <div class="s3a-intro">
-              <p class="s3a-intro-question">Como sabemos exatamente onde o perigo está?</p>
-              <div class="s3a-method-badge"><span aria-hidden="true">⚡</span> Método de Classificação Elétrica de Área
-              </div>
-              <p class="s3a-intro-text">Para isso, utilizamos um <strong>processo racional</strong> que delimita os
-                volumes de controle e nos ajuda a mitigar qualquer fonte de ignição elétrica.</p>
-              <p class="s3a-intro-text">Nesse processo, as substâncias são divididas em <strong>grupos
-                  principais</strong>:</p>
-            </div>
-
-            <div class="s3a-groups-block">
-              <p class="s3a-groups-label"><span aria-hidden="true">📋</span> Grupos de classificação ATEX</p>
-              <div class="s3a-groups-carousel" id="s3a-groups-carousel">
-                <div class="s3a-groups-summary" id="s3a-groups-container">
-                  <div class="s3a-group-card s3a-summary-pill s3a-summary-pill--i s3a-group-active">
-                    <div class="s3a-group-icon" aria-hidden="true">⛏️</div>
-                    <strong>Grupo I</strong>
-                    <span class="s3a-group-sub">Minas</span>
-                    <p class="s3a-group-desc">Minas subterrâneas com risco de grisu</p>
-                  </div>
-                  <div class="s3a-group-card s3a-summary-pill s3a-summary-pill--ii">
-                    <div class="s3a-group-icon" aria-hidden="true">🔥</div>
-                    <strong>Grupo II</strong>
-                    <span class="s3a-group-sub">Gases Inflamáveis</span>
-                    <p class="s3a-group-desc">Gases e vapores inflamáveis — maioria das indústrias</p>
-                  </div>
-                  <div class="s3a-group-card s3a-summary-pill s3a-summary-pill--iii">
-                    <div class="s3a-group-icon" aria-hidden="true">🌫️</div>
-                    <strong>Grupo III</strong>
-                    <span class="s3a-group-sub">Poeiras Combustíveis</span>
-                    <p class="s3a-group-desc">Poeiras e fibras combustíveis</p>
-                  </div>
-                </div>
-                <div class="s3a-groups-nav">
-                  <button type="button" class="s3a-groups-btn" id="btn-s3a-groups-prev" aria-label="Grupo anterior">
-                    <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
-                      <polygon points="15,3 3,10 15,17" />
-                    </svg>
-                  </button>
-                  <div class="s3a-groups-counter" id="s3a-groups-counter">1 / 3</div>
-                  <button type="button" class="s3a-groups-btn" id="btn-s3a-groups-next" aria-label="Próximo grupo">
-                    <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
-                      <polygon points="5,3 17,10 5,17" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,60 C360,20 720,90 1080,35 C1260,10 1380,70 1440,55 L1440,100 L0,100 Z"
-              fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S3b: Tabela de Grupos (Módulo 2) ── -->
-      <section class="slide" id="s3b">
-        <div class="top-bar">
-          <span class="section-tag">📚 Classificação</span>
-          <div class="slide-title" style="margin-top:6px">Grupos e <span>Subdivisões</span></div>
-        </div>
-        <div class="content-area s3b-content">
-          <div class="s3a-wrap">
-
-            <div class="s3b-table-block">
-              <p class="s3a-table-label">Classificação de grupos — gás ou poeira</p>
-
-              <div class="s3a-class-grid" id="s3b-class-grid" role="table"
-                aria-label="Classificação de grupos de áreas classificadas">
-                <div class="s3a-class-head" role="columnheader">Grupo</div>
-                <div class="s3a-class-head" role="columnheader">
-                  <span class="s3b-sub-head-long">Subdivisão da área classificada com gás ou poeira</span>
-                  <span class="s3b-sub-head-short">Subdivisão (gás ou poeira)</span>
-                </div>
-
-                <div class="s3a-grp-cell s3a-grp-i" role="cell">
-                  <span class="s3a-grp-num">Grupo I</span>
-                  <span class="s3a-grp-name">Minas</span>
-                </div>
-                <div class="s3a-sub-cell s3a-sub-i" role="cell">
-                  <span class="s3a-code">I</span>
-                  <span>Metano <em>(Grisu)</em></span>
-                </div>
-
-                <div class="s3a-grp-cell s3a-grp-ii s3a-rowspan-3" role="cell">
-                  <span class="s3a-grp-num">Grupo II</span>
-                  <span class="s3a-grp-name">Gases Inflamáveis</span>
-                </div>
-                <div class="s3a-sub-cell s3a-sub-ii" role="cell">
-                  <span class="s3a-code">IIA</span>
-                  <span>Propano</span>
-                </div>
-                <div class="s3a-sub-cell s3a-sub-ii" role="cell">
-                  <span class="s3a-code">IIB</span>
-                  <span>Etileno</span>
-                </div>
-                <div class="s3a-sub-cell s3a-sub-ii" role="cell">
-                  <span class="s3a-code">IIC</span>
-                  <span>Acetileno</span>
-                </div>
-
-                <div class="s3a-grp-cell s3a-grp-iii s3a-rowspan-3" role="cell">
-                  <span class="s3a-grp-num">Grupo III</span>
-                  <span class="s3a-grp-name">Poeiras Combustíveis</span>
-                </div>
-                <div class="s3a-sub-cell s3a-sub-iii" role="cell">
-                  <span class="s3a-code">IIIA</span>
-                  <span>Fibras combustíveis</span>
-                </div>
-                <div class="s3a-sub-cell s3a-sub-iii" role="cell">
-                  <span class="s3a-code">IIIB</span>
-                  <span>Poeiras não condutivas</span>
-                </div>
-                <div class="s3a-sub-cell s3a-sub-iii" role="cell">
-                  <span class="s3a-code">IIIC</span>
-                  <span>Poeiras condutivas</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,60 C360,20 720,90 1080,35 C1260,10 1380,70 1440,55 L1440,100 L0,100 Z"
-              fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S3c: VÍDEO — Zonas para Gases e Vapores (Módulo 2) ── -->
-      <section class="slide video-slide" id="s3c">
-        <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Zonas para <span>Gases e Vapores</span></div>
-            <div class="slide-subtitle">Classificação e Mapeamento de Áreas</div>
-          </div>
-        </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe
-                src="https://player.vimeo.com/video/1203454839?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&dnt=1"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;"
-                title="Zonas para Gases e Vapores — NR11 - OPERADOR DE TRANSPALETEIRA">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S3e: VÍDEO — Zonas de Poeiras e Fibras (Módulo 2) ── -->
-      <section class="slide video-slide" id="s3e">
-        <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Zonas de <span>Poeiras e Fibras</span></div>
-            <div class="slide-subtitle">Classificação e Mapeamento de Áreas</div>
-          </div>
-        </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe
-                src="https://player.vimeo.com/video/1203486065?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&dnt=1"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;"
-                title="Zonas de Poeiras e Fibras — NR11 - OPERADOR DE TRANSPALETEIRA">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S3d: Zonas ATEX — Gases, Vapores e Névoas (Módulo 2) ── -->
-      <section class="slide" id="s3d">
-        <div class="top-bar">
-          <span class="section-tag">📚 Classificação</span>
-          <div class="slide-title" style="margin-top:6px">Zonas <span>ATEX</span></div>
-        </div>
-        <div class="content-area s3d-content">
-          <div class="s3a-wrap">
-            <p class="s3a-table-label">Classificação de zonas ATEX</p>
-            <div class="s3d-zones-carousel" id="s3d-zones-carousel">
-              <div class="s3d-zones-grid" role="table"
-                aria-label="Zonas ATEX — gases, vapores, névoas, poeiras e fibras">
-                <div class="s3d-zones-head" role="columnheader">Tipo</div>
-                <div class="s3d-zones-head" role="columnheader">Descrição</div>
-                <div class="s3d-zones-head" role="columnheader">Frequência</div>
-
-                <div class="s3d-zones-subhead s3d-group-gas" role="row">
-                  <span class="s3d-group-tag">Grupo II</span>
-                  <span class="s3d-group-label">Gases, vapores e névoas</span>
-                </div>
-
-                <div class="s3d-zone-type s3d-row-0" role="cell">ZONA 0</div>
-                <div class="s3d-zone-desc s3d-row-0" role="cell">
-                  Local onde uma Atmosfera Explosiva (ATEX): Gás, Vapor ou Névoa está <strong>presente de forma
-                    contínua</strong>, por longos períodos.
-                </div>
-                <div class="s3d-zone-freq s3d-row-0" role="cell">Frequente</div>
-
-                <div class="s3d-zone-type s3d-row-1" role="cell">ZONA 1</div>
-                <div class="s3d-zone-desc s3d-row-1" role="cell">
-                  Local onde uma Atmosfera Explosiva (ATEX): Gás, Vapor ou Névoa <strong>pode ocorrer em condições
-                    normais</strong> de funcionamento.
-                </div>
-                <div class="s3d-zone-freq s3d-row-1" role="cell">Ocasional</div>
-
-                <div class="s3d-zone-type s3d-row-2" role="cell">ZONA 2</div>
-                <div class="s3d-zone-desc s3d-row-2" role="cell">
-                  Local onde uma Atmosfera Explosiva (ATEX): Gás, Vapor ou Névoa <strong>não é provável</strong> de
-                  ocorrer em <strong>condições normais</strong> de funcionamento.
-                </div>
-                <div class="s3d-zone-freq s3d-row-2" role="cell">Esporádico</div>
-
-                <div class="s3d-zones-subhead s3d-group-dust" role="row">
-                  <span class="s3d-group-tag">Grupo III</span>
-                  <span class="s3d-group-label">Poeiras e fibras combustíveis</span>
-                </div>
-
-                <div class="s3d-zone-type s3d-row-3" role="cell">ZONA 20</div>
-                <div class="s3d-zone-desc s3d-row-3" role="cell">
-                  Local onde uma Atmosfera Explosiva (ATEX): Nuvem de Poeira ou Fibra Combustível está <strong>presente
-                    de forma contínua</strong>, por longos períodos.
-                </div>
-                <div class="s3d-zone-freq s3d-row-3" role="cell">Frequente</div>
-
-                <div class="s3d-zone-type s3d-row-4" role="cell">ZONA 21</div>
-                <div class="s3d-zone-desc s3d-row-4" role="cell">
-                  Local onde uma Atmosfera Explosiva (ATEX): Nuvem de Poeira ou Fibra Combustível <strong>pode ocorrer
-                    em condições normais</strong> de funcionamento.
-                </div>
-                <div class="s3d-zone-freq s3d-row-4" role="cell">Ocasional</div>
-
-                <div class="s3d-zone-type s3d-row-5" role="cell">ZONA 22</div>
-                <div class="s3d-zone-desc s3d-row-5" role="cell">
-                  Local onde uma Atmosfera Explosiva (ATEX): Nuvem de Poeira ou Fibra Combustível <strong>não é
-                    provável</strong> de ocorrer em <strong>condições normais</strong> de funcionamento.
-                </div>
-                <div class="s3d-zone-freq s3d-row-5" role="cell">Esporádico</div>
-              </div>
-              <div class="s3d-zones-nav">
-                <button type="button" class="s3d-zones-btn" id="btn-s3d-zones-prev" aria-label="Zona anterior">
-                  <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
-                    <polygon points="15,3 3,10 15,17" />
-                  </svg>
-                </button>
-                <div class="s3d-zones-counter" id="s3d-zones-counter">1 / 6</div>
-                <button type="button" class="s3d-zones-btn" id="btn-s3d-zones-next" aria-label="Próxima zona">
-                  <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
-                    <polygon points="5,3 17,10 5,17" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,60 C360,20 720,90 1080,35 C1260,10 1380,70 1440,55 L1440,100 L0,100 Z"
-              fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S3f: QUIZ — Módulo 2 (Classificação e Zonas ATEX) ── -->
-      <section class="slide" id="s3f">
-        <div class="top-bar">
-          <span class="section-tag">🎮 DESAFIO</span>
-          <div class="slide-title" style="margin-top:6px">Classificação e <span>Zonas</span></div>
-        </div>
-        <div class="content-area mod2-state-intro">
-          <div id="mod2-quiz-intro" class="mod1-game-wrap" style="text-align:center; animation: fadeIn 0.8s ease;">
-            <div class="ic-circle" style="margin: 0 auto 24px; width: 96px; height: 96px; font-size: 48px;">📋</div>
-            <h3 style="font-family:var(--font-h); font-size:26px; color:var(--white); margin-bottom:12px;">
-              Desafio ATEX — Módulo 2</h3>
-            <p style="color:rgba(255,255,255,0.72); font-size:15px; line-height:1.65; margin-bottom:28px;">
-              Responda <strong>5 perguntas</strong> sobre <strong>grupos de classificação</strong>,
-              <strong>zonas para gases</strong> e <strong>zonas para poeiras</strong>.
-            </p>
-            <button class="btn-start" style="padding: 16px 40px; font-size: 15px; text-transform: uppercase;"
-              onclick="startMod2Quiz()">INICIAR DESAFIO</button>
-          </div>
-
-          <div id="mod2-quiz-play" class="mod1-game-wrap quiz-wrap" style="display:none;">
-            <div id="qm2-question-panel">
-              <div class="q-meta">
-                <span id="qm2-counter" class="q-lbl">Pergunta 1 de 5</span>
-                <div class="q-dots" id="qm2-dots">
-                  <div id="qm2dot0" class="qdot2 cur"></div>
-                  <div id="qm2dot1" class="qdot2"></div>
-                  <div id="qm2dot2" class="qdot2"></div>
-                  <div id="qm2dot3" class="qdot2"></div>
-                  <div id="qm2dot4" class="qdot2"></div>
-                </div>
-              </div>
-              <p id="qm2-text" class="q-text">...</p>
-              <div id="qm2-options" class="q-options"></div>
-              <div id="qm2-feedback" class="q-feedback"></div>
-              <button type="button" id="btn-next-qm2" class="btn-next-q" onclick="nextQuestionMod2()">PRÓXIMA
-                PERGUNTA</button>
-            </div>
-
-            <div id="qm2-result-panel" style="display:none; text-align:center;">
-              <div id="qm2-pct" class="result-pct green">100%</div>
-              <div class="r-stars" id="qm2-stars">⭐⭐⭐</div>
-              <div id="qm2-status" class="r-status ap">✅ Módulo Concluído!</div>
-              <p id="qm2-sub"
-                style="color:rgba(255,255,255,0.85); font-size:15px; line-height:1.55; margin:16px 0 24px;"></p>
-              <button type="button" class="btn-retry" onclick="resetQuizMod2()">TENTAR NOVAMENTE</button>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,60 C360,20 720,90 1080,35 C1260,10 1380,70 1440,55 L1440,100 L0,100 Z"
-              fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── MÓDULO 3 INTRO ── -->
-      <section class="slide mod-intro-slide" id="s-mod3">
-        <div class="content-area mod-intro-area">
-          <div class="mod-intro-inner">
-            <div class="mod-intro-badge">Início do Módulo</div>
-            <div class="mod-intro-title">MÓDULO 3</div>
-            <div class="mod-intro-sub">Procedimentos Operacionais e Operação Segura</div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,65 C360,20 720,90 1080,40 C1260,15 1390,70 1440,60 L1440,100 L0,100 Z"
-              fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S3v: VÍDEO — Equipamentos, Temperaturas e Rotulagem (Módulo 3) ── -->
-      <section class="slide video-slide" id="s3v">
-        <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Riscos Elétricos e <span>Fontes de Ignição</span></div>
-            <div class="slide-subtitle">Riscos Elétricos e Fontes de Ignição</div>
-          </div>
-        </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe
-                src="https://player.vimeo.com/video/1203798138?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;dnt=1"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;"
-                title="Riscos Elétricos e Fontes de Ignição — NR11 - OPERADOR DE TRANSPALETEIRA">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S3v2: VÍDEO — Classe de Temperatura (Módulo 3) ── -->
-      <section class="slide video-slide" id="s3v2">
-        <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Classe de <span>Temperatura</span></div>
-            <div class="slide-subtitle">Equipamentos de Proteção, Temperaturas e Rotulagem</div>
-          </div>
-        </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe
-                src="https://player.vimeo.com/video/1204287609?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;dnt=1"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;"
-                title="Classe de Temperatura — NR11 - OPERADOR DE TRANSPALETEIRA">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S3t: TABELA — Classes de Temperatura (Módulo 3) ── -->
-      <section class="slide" id="s3t">
-        <div class="top-bar">
-          <span class="section-tag">🌡️ Temperatura</span>
-          <div class="slide-title" style="margin-top:6px">Classes de <span>Temperatura</span></div>
-        </div>
-        <div class="content-area s3t-content">
-          <div class="s3t-wrap" style="width:100%; max-width:800px; margin: 0 auto;">
-            <p class="s3t-table-label"
-              style="font-family:var(--font-h); font-size:clamp(13px, 1.2vw, 16px); font-weight:800; color:var(--gold-lt); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:12px; text-align:center;">
-              Classificação de Temperatura Máxima de Superfície (NEC 500.8(C))
-            </p>
-
-            <!-- Controle de abas para mobile -->
-            <div class="s3t-tabs" id="s3t-mobile-tabs">
-              <button type="button" class="s3t-tab-btn active" onclick="switchS3tTab(1)">Classes T1 a T3</button>
-              <button type="button" class="s3t-tab-btn" onclick="switchS3tTab(2)">Classes T3A a T6</button>
-            </div>
-
-            <div class="s3t-tab-hint">
-              <span>💡</span> Toque nas abas acima para alternar as tabelas
-            </div>
-
-            <div class="s3t-tables-container">
-              <!-- Sub-tabela 1: T1 até T3 -->
-              <div class="s3t-temp-grid" id="s3t-grid-1" role="table"
-                aria-label="Classificação de Temperatura Máxima de Superfície - Parte 1">
-                <div class="s3t-temp-head" role="columnheader">Temp. (°C)</div>
-                <div class="s3t-temp-head" role="columnheader">Temp. (°F)</div>
-                <div class="s3t-temp-head" role="columnheader">Classe (Código T)</div>
-
-                <!-- T1 -->
-                <div class="s3t-cell s3t-row-odd s3t-group-gold" role="cell">450 °C</div>
-                <div class="s3t-cell s3t-row-odd s3t-group-gold" role="cell">842 °F</div>
-                <div class="s3t-cell s3t-row-odd s3t-group-gold s3t-col-tcode" role="cell">T1</div>
-
-                <!-- T2 -->
-                <div class="s3t-cell s3t-row-even s3t-group-gold" role="cell">300 °C</div>
-                <div class="s3t-cell s3t-row-even s3t-group-gold" role="cell">572 °F</div>
-                <div class="s3t-cell s3t-row-even s3t-group-gold s3t-col-tcode" role="cell">T2</div>
-
-                <!-- T2A -->
-                <div class="s3t-cell s3t-row-odd s3t-group-gold" role="cell">280 °C</div>
-                <div class="s3t-cell s3t-row-odd s3t-group-gold" role="cell">536 °F</div>
-                <div class="s3t-cell s3t-row-odd s3t-group-gold s3t-col-tcode" role="cell">T2A</div>
-
-                <!-- T2B -->
-                <div class="s3t-cell s3t-row-even s3t-group-gold" role="cell">260 °C</div>
-                <div class="s3t-cell s3t-row-even s3t-group-gold" role="cell">500 °F</div>
-                <div class="s3t-cell s3t-row-even s3t-group-gold s3t-col-tcode" role="cell">T2B</div>
-
-                <!-- T2C -->
-                <div class="s3t-cell s3t-row-odd s3t-group-gold" role="cell">230 °C</div>
-                <div class="s3t-cell s3t-row-odd s3t-group-gold" role="cell">446 °F</div>
-                <div class="s3t-cell s3t-row-odd s3t-group-gold s3t-col-tcode" role="cell">T2C</div>
-
-                <!-- T2D -->
-                <div class="s3t-cell s3t-row-even s3t-group-gold" role="cell">215 °C</div>
-                <div class="s3t-cell s3t-row-even s3t-group-gold" role="cell">419 °F</div>
-                <div class="s3t-cell s3t-row-even s3t-group-gold s3t-col-tcode" role="cell">T2D</div>
-
-                <!-- T3 -->
-                <div class="s3t-cell s3t-row-odd s3t-group-blue" role="cell">200 °C</div>
-                <div class="s3t-cell s3t-row-odd s3t-group-blue" role="cell">392 °F</div>
-                <div class="s3t-cell s3t-row-odd s3t-group-blue s3t-col-tcode" role="cell">T3</div>
-              </div>
-
-              <!-- Sub-tabela 2: T3A até T6 -->
-              <div class="s3t-temp-grid" id="s3t-grid-2" role="table"
-                aria-label="Classificação de Temperatura Máxima de Superfície - Parte 2">
-                <div class="s3t-temp-head" role="columnheader">Temp. (°C)</div>
-                <div class="s3t-temp-head" role="columnheader">Temp. (°F)</div>
-                <div class="s3t-temp-head" role="columnheader">Classe (Código T)</div>
-
-                <!-- T3A -->
-                <div class="s3t-cell s3t-row-odd s3t-group-blue" role="cell">180 °C</div>
-                <div class="s3t-cell s3t-row-odd s3t-group-blue" role="cell">356 °F</div>
-                <div class="s3t-cell s3t-row-odd s3t-group-blue s3t-col-tcode" role="cell">T3A</div>
-
-                <!-- T3B -->
-                <div class="s3t-cell s3t-row-even s3t-group-blue" role="cell">165 °C</div>
-                <div class="s3t-cell s3t-row-even s3t-group-blue" role="cell">329 °F</div>
-                <div class="s3t-cell s3t-row-even s3t-group-blue s3t-col-tcode" role="cell">T3B</div>
-
-                <!-- T3C -->
-                <div class="s3t-cell s3t-row-odd s3t-group-blue" role="cell">160 °C</div>
-                <div class="s3t-cell s3t-row-odd s3t-group-blue" role="cell">320 °F</div>
-                <div class="s3t-cell s3t-row-odd s3t-group-blue s3t-col-tcode" role="cell">T3C</div>
-
-                <!-- T4 -->
-                <div class="s3t-cell s3t-row-even s3t-group-purple" role="cell">135 °C</div>
-                <div class="s3t-cell s3t-row-even s3t-group-purple" role="cell">275 °F</div>
-                <div class="s3t-cell s3t-row-even s3t-group-purple s3t-col-tcode" role="cell">T4</div>
-
-                <!-- T4A -->
-                <div class="s3t-cell s3t-row-odd s3t-group-purple" role="cell">120 °C</div>
-                <div class="s3t-cell s3t-row-odd s3t-group-purple" role="cell">248 °F</div>
-                <div class="s3t-cell s3t-row-odd s3t-group-purple s3t-col-tcode" role="cell">T4A</div>
-
-                <!-- T5 -->
-                <div class="s3t-cell s3t-row-even s3t-group-purple" role="cell">100 °C</div>
-                <div class="s3t-cell s3t-row-even s3t-group-purple" role="cell">212 °F</div>
-                <div class="s3t-cell s3t-row-even s3t-group-purple s3t-col-tcode" role="cell">T5</div>
-
-                <!-- T6 -->
-                <div class="s3t-cell s3t-row-odd s3t-group-purple" role="cell">85 °C</div>
-                <div class="s3t-cell s3t-row-odd s3t-group-purple" role="cell">185 °F</div>
-                <div class="s3t-cell s3t-row-odd s3t-group-purple s3t-col-tcode" role="cell">T6</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,60 C360,20 720,90 1080,35 C1260,10 1380,70 1440,55 L1440,100 L0,100 Z"
-              fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S3v3: VÍDEO — Tipos e Modos de Proteção Ex (Gases e Vapores) (Módulo 3) ── -->
-      <section class="slide video-slide" id="s3v3">
-        <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Modos de <span>Proteção Ex</span></div>
-            <div class="slide-subtitle">Tipos e Modos de Proteção Ex (Gases e Vapores)</div>
-          </div>
-        </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe
-                src="https://player.vimeo.com/video/1204182700?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;dnt=1"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;"
-                title="Tipos e Modos de Proteção Ex (Gases e Vapores) — NR11 - OPERADOR DE TRANSPALETEIRA">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S3v4: IMAGEM — Tipos de Proteção Ex (Módulo 3) ── -->
-      <section class="slide" id="s3v4">
-        <div class="top-bar">
-          <span class="section-tag">🏷️ Sinalização</span>
-          <div class="slide-title" style="margin-top:6px">Tipos de <span>Proteção Ex</span></div>
-        </div>
-        <div class="content-area s4s-content">
-          <div class="s4s-wrap">
-            <p class="s4s-label">Tipos de Proteção Ex para Gases e Vapores</p>
-            <div class="s4s-table-card">
-              <div class="img-zoom-wrap" onclick="openImgModal('img/tipo de protecao.png')">
-                <img src="img/tipo de protecao.png" alt="Tipos de Proteção Ex para Gases e Vapores">
-                <button type="button" class="zoom-btn" title="Ver em tela cheia"
-                  onclick="event.stopPropagation(); openImgModal('img/tipo de protecao.png')">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                    <path
-                      d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zM10 7H9v2H7v1h2v2h1v-2h2V9h-2V7z" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S3v4_video: VÍDEO — Tipos e Modos de Proteção Ex (Poeiras e Fibras) (Módulo 3) ── -->
-      <section class="slide video-slide" id="s3v4_video">
-        <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Modos de <span>Proteção Ex</span></div>
-            <div class="slide-subtitle">Tipos e Modos de Proteção Ex (Poeiras e Fibras)</div>
-          </div>
-        </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe
-                src="https://player.vimeo.com/video/1204263590?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;dnt=1"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;"
-                title="Tipos e Modos de Proteção Ex (Poeiras e Fibras) — NR11 - OPERADOR DE TRANSPALETEIRA">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S3v5: IMAGEM — Modos de Proteção para Poeiras e Fibras Combustíveis (Módulo 3) ── -->
-      <section class="slide" id="s3v5">
-        <div class="top-bar">
-          <span class="section-tag">🏷️ Sinalização</span>
-          <div class="slide-title" style="margin-top:6px">Modos de <span>Proteção Ex</span></div>
-        </div>
-        <div class="content-area s4s-content">
-          <div class="s4s-wrap">
-            <p class="s4s-label">Modos de Proteção para Poeiras e Fibras Combustíveis</p>
-            <div class="s4s-table-card">
-              <div class="img-zoom-wrap" onclick="openImgModal('img/modos protecao.png')">
-                <img src="img/modos protecao.png" alt="Modos de Proteção para Poeiras e Fibras Combustíveis">
-                <button type="button" class="zoom-btn" title="Ver em tela cheia"
-                  onclick="event.stopPropagation(); openImgModal('img/modos protecao.png')">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                    <path
-                      d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zM10 7H9v2H7v1h2v2h1v-2h2V9h-2V7z" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S3v6: IMAGEM — Rotulagem de Equipamentos Ex (Módulo 3) ── -->
-      <section class="slide" id="s3v6">
-        <div class="top-bar">
-          <span class="section-tag">🏷️ Sinalização</span>
-          <div class="slide-title" style="margin-top:6px">Rotulagem de <span>Equipamentos Ex</span></div>
-        </div>
-        <div class="content-area s4s-content">
-          <div class="s4s-wrap">
-            <p class="s4s-label">Rotulagem de Equipamentos Ex</p>
-            <div class="s4s-table-card">
-              <div class="img-zoom-wrap" onclick="openImgModal('img/rotulagem de quipamentos.png')">
-                <img src="img/rotulagem de quipamentos.png" alt="Rotulagem de Equipamentos Ex">
-                <button type="button" class="zoom-btn" title="Ver em tela cheia"
-                  onclick="event.stopPropagation(); openImgModal('img/rotulagem de quipamentos.png')">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                    <path
-                      d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zM10 7H9v2H7v1h2v2h1v-2h2V9h-2V7z" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S3g: DESAFIO — Módulo 3 (Equipamentos e Modos de Proteção) ── -->
-      <section class="slide" id="s3g">
-        <div class="top-bar">
-          <span class="section-tag">🎮 DESAFIO</span>
-          <div class="slide-title">Classifique o <span>Conceito</span></div>
-        </div>
-        <div class="content-area">
-
-          <div id="mod3-game-intro" class="mod1-game-wrap"
-            style="text-align:center; animation: fadeIn 0.8s ease;">
-            <div class="ic-circle" style="margin: 0 auto 24px; width: 96px; height: 96px; font-size: 48px;">⚙️</div>
-            <h3 style="font-family:var(--font-h); font-size:26px; color:var(--white); margin-bottom:12px;">Desafio ATEX — Módulo 3</h3>
-            <p style="color:rgba(255,255,255,0.72); font-size:15px; line-height:1.65; margin-bottom:28px;">
-              Classifique cada conceito ou equipamento de proteção no grupo adequado:
-              <strong>Gases e Vapores</strong>, <strong>Poeiras e Fibras</strong> ou
-              <strong>Riscos e Temperaturas</strong>. São <strong>3 conceitos</strong> para testar seu aprendizado.
-            </p>
-            <button class="btn-start" style="padding: 16px 40px; font-size: 15px; text-transform: uppercase;"
-              onclick="startMod3Game()">INICIAR DESAFIO</button>
-          </div>
-
-          <div id="mod3-game-play" class="mod4-risk-wrap mod4-risk-shell" style="display:none;">
-            <div class="mod4-risk-steps" id="mod3-game-progress" aria-hidden="true"></div>
-            <div class="mod4-risk-head">
-              <span class="mod4-risk-tag">⚙️ Classifique a Proteção</span>
-              <span class="mod4-risk-counter" id="mod3-game-counter">1 / 3</span>
-            </div>
-            <div id="mod3-game-card" class="mod4-risk-card">
-              <p id="mod3-game-text" class="mod4-risk-text">...</p>
-            </div>
-            <div class="mod4-risk-zones">
-              <button type="button" class="mod4-risk-btn zone-gas" onclick="handleMod3GameChoice('gases')">
-                <span>💨</span>
-                <span class="mod4-risk-btn-label">Gases e Vapores</span>
-              </button>
-              <button type="button" class="mod4-risk-btn zone-poeira" onclick="handleMod3GameChoice('poeiras')">
-                <span>🌾</span>
-                <span class="mod4-risk-btn-label">Poeiras e Fibras</span>
-              </button>
-              <button type="button" class="mod4-risk-btn zone-risco" onclick="handleMod3GameChoice('riscos')">
-                <span>🌡️</span>
-                <span class="mod4-risk-btn-label">Riscos e Temp.</span>
-              </button>
-            </div>
-            <p class="mod4-risk-hint">Toque na categoria correta para avançar</p>
-            <div id="mod3-game-feedback" class="mod4-risk-feedback"></div>
-          </div>
-
-          <div id="mod3-game-result" class="mod4-risk-wrap mod4-risk-shell mod3-result-panel"
-            style="display:none; animation: slideUp 0.6s ease; text-align:center;">
-            <div class="r-icon">🏆</div>
-            <h3
-              style="font-family:var(--font-h); font-size: clamp(26px, 4vw, 34px); color:var(--gold); margin-bottom:10px; font-weight:900;">
-              Desafio Concluído!</h3>
-            <div class="r-status ap"
-              style="display:inline-block; padding: 8px 22px; font-size: 14px; margin-bottom:16px; font-weight:700;">
-              Módulo 3 Validado
-            </div>
-            <p id="mod3-game-result-msg"
-              style="color:rgba(255,255,255,0.88); font-size:clamp(15px,2vw,17px); line-height:1.6; margin-bottom:24px; max-width:520px; margin-left:auto; margin-right:auto;">
-            </p>
-            <button class="btn-retry"
-              style="background: var(--white); color: var(--black); font-weight: 800; border-radius: 99px; padding: 12px 32px;"
-              onclick="resetMod3Game()">TENTAR NOVAMENTE</button>
-          </div>
-
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,50 C480,10 960,85 1440,30 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── MÓDULO 4 INTRO ── -->
-      <section class="slide mod-intro-slide" id="s-mod4">
-        <div class="content-area mod-intro-area">
-          <div class="mod-intro-inner">
-            <div class="mod-intro-badge">Início do Módulo</div>
-            <div class="mod-intro-title">MÓDULO 4</div>
-            <div class="mod-intro-sub">Movimentação, Cargas e Armazenamento</div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,65 C360,20 720,90 1080,40 C1260,15 1390,70 1440,60 L1440,100 L0,100 Z"
-              fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S4v: VÍDEO — Riscos Químicos (Módulo 4) ── -->
-      <section class="slide video-slide" id="s4v">
-        <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Riscos <span>Químicos</span></div>
-            <div class="slide-subtitle">Riscos Inerentes e Identificação de Produtos Químicos</div>
-          </div>
-        </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe
-                src="https://player.vimeo.com/video/1203548837?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&dnt=1"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;"
-                title="Riscos Químicos — NR11 - OPERADOR DE TRANSPALETEIRA">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S4s: TABELA — Sinalização GHS (Módulo 4) ── -->
-      <section class="slide" id="s4s">
-        <div class="top-bar">
-          <span class="section-tag">🏷️ Sinalização</span>
-          <div class="slide-title" style="margin-top:6px">Classes de Perigo do <span>GHS</span></div>
-        </div>
-        <div class="content-area s4s-content">
-          <div class="s4s-wrap">
-            <p class="s4s-label">GHS — Globally Harmonized System</p>
-            <div class="s4s-table-card">
-              <div class="img-zoom-wrap" onclick="openImgModal('img/sinalizacoes.jpg')">
-                <img src="img/sinalizacoes.jpg"
-                  alt="Tabela GHS — classes de perigo: oxidantes, toxidade aguda, carcinogênico, inflamáveis, corrosivos, irritante, explosivos, gases sob pressão e perigo ambiental">
-                <button type="button" class="zoom-btn" title="Ver em tela cheia"
-                  onclick="event.stopPropagation(); openImgModal('img/sinalizacoes.jpg')">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                    <path
-                      d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zM10 7H9v2H7v1h2v2h1v-2h2V9h-2V7z" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S4s2: VÍDEO — Sinalização no Transporte e Painel de Segurança (Módulo 4) ── -->
-      <section class="slide video-slide" id="s4s2">
-        <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Sinalização no <span>Transporte</span></div>
-            <div class="slide-subtitle">Sinalização no Transporte e Painel de Segurança</div>
-          </div>
-        </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe
-                src="https://player.vimeo.com/video/1203808435?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;dnt=1"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;"
-                title="Sinalização no Transporte e Painel de Segurança — NR11 - OPERADOR DE TRANSPALETEIRA">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S4s3: IMAGEM — Painel de Segurança (Módulo 4) ── -->
-      <section class="slide" id="s4s3">
-        <div class="top-bar">
-          <span class="section-tag">🏷️ Sinalização</span>
-          <div class="slide-title" style="margin-top:6px">Painel de <span>Segurança</span></div>
-        </div>
-        <div class="content-area s4s-content">
-          <div class="s4s-wrap">
-            <p class="s4s-label">Painel de Segurança e Ficha de Emergência</p>
-            <div class="s4s-table-card">
-              <div class="img-zoom-wrap" onclick="openImgModal('img/painel de segurança.png')">
-                <img src="img/painel de segurança.png" alt="Painel de Segurança e Ficha de Emergência">
-                <button type="button" class="zoom-btn" title="Ver em tela cheia"
-                  onclick="event.stopPropagation(); openImgModal('img/painel de segurança.png')">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                    <path
-                      d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zM10 7H9v2H7v1h2v2h1v-2h2V9h-2V7z" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S4s4: VÍDEO — Diamante de Hommel (Módulo 4) ── -->
-      <section class="slide video-slide" id="s4s4">
-        <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Diamante de <span>Hommel</span></div>
-            <div class="slide-subtitle">Entendendo o Diamante de Hommel</div>
-          </div>
-        </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe
-                src="https://player.vimeo.com/video/1203955238?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;dnt=1"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;"
-                title="Diamante de Hommel — NR11 - OPERADOR DE TRANSPALETEIRA">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S4s5: IMAGENS — Riscos à Saúde e Reatividade (Módulo 4) ── -->
-      <section class="slide" id="s4s5">
-        <div class="top-bar">
-          <span class="section-tag">🏷️ Sinalização</span>
-          <div class="slide-title" style="margin-top:6px">Riscos à Saúde e <span>Reatividade</span></div>
-        </div>
-        <div class="content-area s4s5-content">
-          <div class="s4s5-wrap">
-            <div class="s4s5-grid">
-              <div class="s4s5-card">
-                <p class="s4s5-card-title">Riscos à Saúde</p>
-                <div class="img-zoom-wrap" onclick="openImgModal('img/riscos a saude 1.png')">
-                  <img src="img/riscos a saude 1.png" alt="Riscos à Saúde — Classificação do Diamante de Hommel">
-                  <button type="button" class="zoom-btn" title="Ver em tela cheia"
-                    onclick="event.stopPropagation(); openImgModal('img/riscos a saude 1.png')">
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                      <path
-                        d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zM10 7H9v2H7v1h2v2h1v-2h2V9h-2V7z" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div class="s4s5-card">
-                <p class="s4s5-card-title">Reatividade</p>
-                <div class="img-zoom-wrap" onclick="openImgModal('img/reatividade 2.png')">
-                  <img src="img/reatividade 2.png" alt="Reatividade — Classificação do Diamante de Hommel">
-                  <button type="button" class="zoom-btn" title="Ver em tela cheia"
-                    onclick="event.stopPropagation(); openImgModal('img/reatividade 2.png')">
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                      <path
-                        d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zM10 7H9v2H7v1h2v2h1v-2h2V9h-2V7z" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S4s6: IMAGENS — Inflamabilidade e Risco Específico (Módulo 4) ── -->
-      <section class="slide" id="s4s6">
-        <div class="top-bar">
-          <span class="section-tag">🏷️ Sinalização</span>
-          <div class="slide-title" style="margin-top:6px">Inflamabilidade e <span>Risco Específico</span></div>
-        </div>
-        <div class="content-area s4s5-content">
-          <div class="s4s5-wrap">
-            <div class="s4s5-grid">
-              <div class="s4s5-card">
-                <p class="s4s5-card-title">Inflamabilidade</p>
-                <div class="img-zoom-wrap" onclick="openImgModal('img/inflamabilidade 3.png')">
-                  <img src="img/inflamabilidade 3.png" alt="Inflamabilidade — Classificação do Diamante de Hommel">
-                  <button type="button" class="zoom-btn" title="Ver em tela cheia"
-                    onclick="event.stopPropagation(); openImgModal('img/inflamabilidade 3.png')">
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                      <path
-                        d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zM10 7H9v2H7v1h2v2h1v-2h2V9h-2V7z" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div class="s4s5-card">
-                <p class="s4s5-card-title">Risco Específico</p>
-                <div class="img-zoom-wrap" onclick="openImgModal('img/risco especifico 4.png')">
-                  <img src="img/risco especifico 4.png" alt="Risco Específico — Classificação do Diamante de Hommel">
-                  <button type="button" class="zoom-btn" title="Ver em tela cheia"
-                    onclick="event.stopPropagation(); openImgModal('img/risco especifico 4.png')">
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                      <path
-                        d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zM10 7H9v2H7v1h2v2h1v-2h2V9h-2V7z" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S4a: VÍDEO — Riscos Inerentes (Módulo 4) ── -->
-      <section class="slide video-slide" id="s4a">
-        <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Riscos <span>Inerentes</span></div>
-            <div class="slide-subtitle">Riscos Inerentes no Dia a Dia</div>
-          </div>
-        </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe
-                src="https://player.vimeo.com/video/1204196024?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;dnt=1"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;"
-                title="Riscos Inerentes — NR11 - OPERADOR DE TRANSPALETEIRA">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S4f: QUIZ — Módulo 4 (GHS, Transporte, Diamante, FISPQ) ── -->
-      <section class="slide" id="s4f">
-        <div class="top-bar">
-          <span class="section-tag">🎮 DESAFIO</span>
-          <div class="slide-title">Quiz: Segurança <span>Química</span></div>
-        </div>
-        <div class="content-area mod4-state-intro">
-          <div id="mod4-quiz-intro" class="mod1-game-wrap" style="text-align:center; animation: fadeIn 0.8s ease;">
-            <div class="ic-circle" style="margin: 0 auto 24px; width: 96px; height: 96px; font-size: 48px;">🧪</div>
-            <h3 style="font-family:var(--font-h); font-size:26px; color:var(--white); margin-bottom:12px;">Desafio ATEX — Módulo 4</h3>
-            <p style="color:rgba(255,255,255,0.72); font-size:15px; line-height:1.65; margin-bottom:28px;">
-              Responda <strong>4 perguntas</strong> sobre <strong>GHS</strong>,
-              <strong>Sinalização no Transporte</strong>, <strong>Diamante de Hommel</strong> e <strong>FISPQ</strong>.
-            </p>
-            <button class="btn-start" style="padding: 16px 40px; font-size: 15px; text-transform: uppercase;"
-              onclick="startMod4Quiz()">INICIAR DESAFIO</button>
-          </div>
-
-          <div id="mod4-quiz-play" class="mod1-game-wrap quiz-wrap" style="display:none;">
-            <div id="qm4-question-panel">
-              <div class="q-meta">
-                <span id="qm4-counter" class="q-lbl">Pergunta 1 de 4</span>
-                <div class="q-dots" id="qm4-dots">
-                  <div id="qm4dot0" class="qdot2 cur"></div>
-                  <div id="qm4dot1" class="qdot2"></div>
-                  <div id="qm4dot2" class="qdot2"></div>
-                  <div id="qm4dot3" class="qdot2"></div>
-                </div>
-              </div>
-              <p id="qm4-text" class="q-text">...</p>
-              <div id="qm4-options" class="q-options"></div>
-              <div id="qm4-feedback" class="q-feedback"></div>
-              <button type="button" id="btn-next-qm4" class="btn-next-q" onclick="nextQuestionMod4()">PRÓXIMA
-                PERGUNTA</button>
-            </div>
-
-            <div id="qm4-result-panel" style="display:none; text-align:center;">
-              <div id="qm4-pct" class="result-pct green">100%</div>
-              <div class="r-stars" id="qm4-stars">⭐⭐⭐</div>
-              <div id="qm4-status" class="r-status ap">✅ Módulo Concluído!</div>
-              <p id="qm4-sub"
-                style="color:rgba(255,255,255,0.85); font-size:15px; line-height:1.55; margin:16px 0 24px;"></p>
-              <button type="button" class="btn-retry" onclick="resetQuizMod4()">TENTAR NOVAMENTE</button>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,50 C480,10 960,85 1440,30 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── MÓDULO 5 INTRO ── -->
-      <section class="slide mod-intro-slide" id="s-mod5">
-        <div class="content-area mod-intro-area">
-          <div class="mod-intro-inner">
-            <div class="mod-intro-badge">Início do Módulo</div>
-            <div class="mod-intro-title">MÓDULO 5</div>
-            <div class="mod-intro-sub">Manutenção e Segurança com Baterias</div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,65 C360,20 720,90 1080,40 C1260,15 1390,70 1440,60 L1440,100 L0,100 Z"
-              fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S5v: VÍDEO — Prevenção Contra Poeiras Combustíveis e Incêndios ── -->
-      <section class="slide video-slide" id="s5v">
-        <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Poeiras e <span>Incêndios</span></div>
-            <div class="slide-subtitle">Prevenção Contra Poeiras Combustíveis e Incêndios</div>
-          </div>
-        </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe
-                src="https://player.vimeo.com/video/1204311576?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&dnt=1"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;"
-                title="Prevenção Contra Poeiras Combustíveis e Incêndios — NR11 - OPERADOR DE TRANSPALETEIRA">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S5a: CONTEÚDO — Conceito de Poeiras Combustíveis (Módulo 5) ── -->
-      <section class="slide" id="s5a">
-        <div class="top-bar">
-          <span class="section-tag">📚 Fundamentos</span>
-          <div class="slide-title" style="margin-top:6px">Poeiras <span>Combustíveis</span></div>
-        </div>
-        <div class="content-area s3-gap-fix pemt-intro-content">
-          <div class="pemt-intro-wrap" style="max-width: 800px; margin: 0 auto; width: 100%;">
-            <div class="icon-card pemt-intro-card atex-hero-card">
-              <div class="atex-hero-inner">
-                <div class="atex-hero-text">
-                  <div class="atex-hero-head">
-                    <div class="ic-circle">⚠️</div>
-                    <h4>O Conceito de Poeiras Combustíveis</h4>
-                  </div>
-                  <p class="atex-intro-lead" style="margin-bottom: 14px;">
-                    Uma <strong>poeira combustível</strong> é qualquer sólido particulado combustível finamente dividido que apresenta um <strong>perigo de incêndio ou risco de explosão</strong> quando suspenso no ar ou em um processo específico de oxidação médio em um range de concentração.
-                  </p>
-                  <p class="atex-intro-lead">
-                    O risco operacional surge porque o próprio transporte e movimentação desses sólidos podem gerar o <strong>acúmulo de eletricidade estática</strong> nas superfícies. Sem os devidos sistemas de equalização e aterramento, uma mínima faísca pode iniciar uma combustão catastrófica.
-                  </p>
-                </div>
-                <figure class="atex-symbol-figure">
-                  <img src="img/simbolo.png" alt="Símbolo ATEX — triângulo amarelo EX">
-                  <figcaption>Atmosfera Explosiva</figcaption>
-                </figure>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S5v2: VÍDEO — O Pentágono de Explosão de Poeira ── -->
-      <section class="slide video-slide" id="s5v2">
-        <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Pentágono de <span>Explosão</span></div>
-            <div class="slide-subtitle">O Pentágono de Explosão de Poeira</div>
-          </div>
-        </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe
-                src="https://player.vimeo.com/video/1204593945?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&dnt=1"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;"
-                title="O Pentágono de Explosão de Poeira — NR11 - OPERADOR DE TRANSPALETEIRA">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S5p: IMAGEM & AVISO — Pentágono de Explosão ── -->
-      <section class="slide" id="s5p" data-audio-text="Fundamentos. Pentágono de Explosão. Tabela do Pentágono de Explosão de Poeira. Aviso Importante: Remover qualquer um dos elementos previne a explosão, mas não necessariamente o fogo.">
-        <div class="top-bar">
-          <span class="section-tag">📚 Fundamentos</span>
-          <div class="slide-title" style="margin-top:6px">Pentágono de <span>Explosão</span></div>
-        </div>
-        <div class="content-area">
-          <div class="s5p-container">
-            <div class="atex-warning-box">
-              <div class="atex-warning-icon">⚠️</div>
-              <div class="atex-warning-text">
-                <h5>Aviso Importante</h5>
-                <p>Remover qualquer um dos elementos <strong>previne a explosão</strong>, mas <strong>não necessariamente o fogo</strong>.</p>
-              </div>
-            </div>
-            <div class="s5p-image-card">
-              <div class="img-zoom-wrap" onclick="openImgModal('img/pentagono de explosao.png')">
-                <img src="img/pentagono de explosao.png" alt="O Pentágono de Explosão de Poeira">
-                <button type="button" class="zoom-btn" title="Ver em tela cheia"
-                  onclick="event.stopPropagation(); openImgModal('img/pentagono de explosao.png')">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                    <path
-                      d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zM10 7H9v2H7v1h2v2h1v-2h2V9h-2V7z" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S5v3: VÍDEO — Particularidades de Reação (Módulo 5) ── -->
-      <section class="slide video-slide" id="s5v3">
-        <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Reação das <span>Substâncias</span></div>
-            <div class="slide-subtitle">Particularidades de Reação das Substâncias</div>
-          </div>
-        </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe
-                src="https://player.vimeo.com/video/1204852008?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&dnt=1"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;"
-                title="Particularidades de Reação das Substâncias — NR11 - OPERADOR DE TRANSPALETEIRA">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S5v4: VÍDEO — Extintores Portáteis e o Combate em Áreas Classificadas (Módulo 5) ── -->
-      <section class="slide video-slide" id="s5v4">
-        <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Extintores <span>Portáteis</span></div>
-            <div class="slide-subtitle">Extintores Portáteis e o Combate em Áreas Classificadas</div>
-          </div>
-        </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe
-                src="https://player.vimeo.com/video/1204952937?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&dnt=1"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;"
-                title="Extintores Portáteis e o Combate em Áreas Classificadas — NR11 - OPERADOR DE TRANSPALETEIRA">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S5f: DESAFIO — Módulo 5 (Poeiras e Extintores — Verdadeiro ou Falso) ── -->
-      <section class="slide" id="s5f">
-        <div class="top-bar">
-          <span class="section-tag">🎮 DESAFIO</span>
-          <div class="slide-title" style="margin-top:6px">Poeiras e <span>Incêndios</span></div>
-        </div>
-        <div class="content-area mod5-state-intro">
-          <div id="mod5-game-intro" class="mod1-game-wrap" style="text-align:center; animation: fadeIn 0.8s ease;">
-            <div class="ic-circle" style="margin: 0 auto 24px; width: 96px; height: 96px; font-size: 48px;">⚖️</div>
-            <h3 style="font-family:var(--font-h); font-size:26px; color:var(--white); margin-bottom:12px;">Desafio Módulo 5</h3>
-            <p style="color:rgba(255,255,255,0.72); font-size:15px; line-height:1.65; margin-bottom:28px;">
-              Julgue as afirmações sobre <strong>Pentágono de Explosão</strong>, <strong>Energias de Ignição</strong> e <strong>Agentes Extintores</strong> em Verdadeiro ou Falso.
-            </p>
-            <button class="btn-start" style="padding: 16px 40px; font-size: 15px; text-transform: uppercase;"
-              onclick="startMod5Game()">INICIAR DESAFIO</button>
-          </div>
-
-          <div id="mod5-game-play" class="mod1-game-wrap quiz-wrap" style="display:none;">
-            <div id="m5-game-panel">
-              <div class="q-meta" style="margin-bottom: 20px;">
-                <span class="q-lbl" style="font-weight: 700; color: var(--purple-lt);">Julgue a afirmação abaixo:</span>
-                <span id="m5-counter" class="q-lbl">Afirmação 1 de 4</span>
-              </div>
-
-              <p id="m5-text" class="q-text" style="font-size: clamp(15px, 2.5vw, 19px); line-height: 1.6; min-height: 80px; margin-bottom: 24px; color: var(--cream);">...</p>
-              
-              <div id="m5-options" class="q-options" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; width: 100%;">
-                <!-- Buttons will be dynamically inserted here -->
-              </div>
-              
-              <div id="m5-feedback" class="q-feedback" style="min-height: 32px; margin: 16px 0; font-size: 14px; line-height: 1.5;"></div>
-              
-              <button type="button" id="btn-next-m5" class="btn-next-q" onclick="nextQuestionMod5()" style="margin-top: 10px;">PRÓXIMA ETAPA</button>
-            </div>
-
-            <div id="m5-result-panel" style="display:none; text-align:center;">
-              <div id="m5-pct" class="result-pct green">100%</div>
-              <div class="r-stars" id="m5-stars">⭐⭐⭐</div>
-              <div id="m5-status" class="r-status ap">✅ Módulo Concluído!</div>
-              <p id="m5-sub" style="color:rgba(255,255,255,0.85); font-size:15px; line-height:1.55; margin:16px 0 24px;"></p>
-              <button type="button" class="btn-retry" onclick="resetGameMod5()">REFAZER DESAFIO</button>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,50 C480,10 960,85 1440,30 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── MÓDULO 6 INTRO ── -->
-      <section class="slide mod-intro-slide" id="s-mod6">
-        <div class="content-area mod-intro-area">
-          <div class="mod-intro-inner">
-            <div class="mod-intro-badge">Início do Módulo</div>
-            <div class="mod-intro-title">MÓDULO 6</div>
-            <div class="mod-intro-sub">Gestão de Riscos, Emergências e EPIs</div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,65 C360,20 720,90 1080,40 C1260,15 1390,70 1440,60 L1440,100 L0,100 Z"
-              fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S6v: VÍDEO — Boas Práticas e Regras de Ouro (Módulo 6) ── -->
-      <section class="slide video-slide" id="s6v">
-        <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Boas Práticas e <span>Regras</span></div>
-            <div class="slide-subtitle">Gestão de Riscos, Emergências e EPIs</div>
-          </div>
-        </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe
-                src="https://player.vimeo.com/video/1204539216?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&dnt=1"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;"
-                title="Boas Práticas de Gestão ATEX e Regras de Ouro da NR-10 — NR11 - OPERADOR DE TRANSPALETEIRA">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S6v2: VÍDEO — Requisitos Legais da NR-10 para ATEX (Módulo 6) ── -->
-      <section class="slide video-slide" id="s6v2">
-        <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Requisitos Legais da <span>NR-10</span></div>
-            <div class="slide-subtitle">Requisitos Legais da NR-10 para ATEX</div>
-          </div>
-        </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe
-                src="https://player.vimeo.com/video/1204619474?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&dnt=1"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;"
-                title="Requisitos Legais da NR-10 para ATEX — NR11 - OPERADOR DE TRANSPALETEIRA">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S6_Legal_Reqs: CONTEÚDO — Requisitos Legais da NR-10 para ATEX (Módulo 6) ── -->
-      <section class="slide" id="s6_legal_reqs">
-        <div class="top-bar">
-          <span class="section-tag">⚖️ Requisitos Legais</span>
-          <div class="slide-title" style="margin-top:6px">Requisitos Legais da <span>NR-10</span></div>
-          <div class="slide-subtitle">Requisitos Legais Mínimos Mandatórios para ATEX</div>
-        </div>
-        <div class="content-area reqs-slide-content">
-          <div class="reqs-carousel">
-            <div class="reqs-container">
-              <div class="reqs-card">
-                <div class="reqs-icon">🔍</div>
-                <h4>Análise de Riscos</h4>
-                <p>Análise de riscos formais devidamente elaborada e atualizada.</p>
-              </div>
-              <div class="reqs-card">
-                <div class="reqs-icon">🛡️</div>
-                <h4>Medidas de Controle</h4>
-                <p>Medidas de controle adotadas com base no estudo de classificação de área.</p>
-              </div>
-              <div class="reqs-card">
-                <div class="reqs-icon">⚡</div>
-                <h4>Unifilares e Aterramentos</h4>
-                <p>Diagramas unifilares e aterramentos dos sistemas elétricos e protecionais.</p>
-              </div>
-              <div class="reqs-card">
-                <div class="reqs-icon">🏷️</div>
-                <h4>Equipamentos Ex</h4>
-                <p>Equipamentos e materiais certificados para ATEX mantidos em prontuário formal.</p>
-              </div>
-              <div class="reqs-card">
-                <div class="reqs-icon">📝</div>
-                <h4>Permissão de Trabalho</h4>
-                <p>Procedimentos formais estabelecidos para emissão de Permissão de Trabalho (PT).</p>
-              </div>
-              <div class="reqs-card">
-                <div class="reqs-icon">⚠️</div>
-                <h4>Sinalização</h4>
-                <p>Sinalização visual adequada e de advertência para áreas classificadas.</p>
-              </div>
-              <div class="reqs-card">
-                <div class="reqs-icon">🔧</div>
-                <h4>Manutenção</h4>
-                <p>Treinamento e capacitação específica para atuação segura em área classificada.</p>
-              </div>
-              <div class="reqs-card">
-                <div class="reqs-icon">📢</div>
-                <h4>Informação aos Trabalhadores</h4>
-                <p>Divulgação clara sobre os riscos envolvidos e as respectivas medidas de controle.</p>
-              </div>
-            </div>
-            <div class="reqs-nav">
-              <button type="button" class="reqs-nav-btn" id="btn-reqs-prev" onclick="prevReqSlide()" aria-label="Requisito anterior">
-                <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
-                  <polygon points="15,3 3,10 15,17" />
-                </svg>
-              </button>
-              <div class="reqs-counter" id="reqs-counter">1 / 8</div>
-              <button type="button" class="reqs-nav-btn" id="btn-reqs-next" onclick="nextReqSlide()" aria-label="Próximo requisito">
-                <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
-                  <polygon points="5,3 17,10 5,17" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S6v3: VÍDEO — Regras de Ouro (Módulo 6) ── -->
-      <section class="slide video-slide" id="s6v3">
-        <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">As 5 Regras de <span>Ouro</span></div>
-            <div class="slide-subtitle">Regras de Ouro da NR-10 para Segurança Elétrica</div>
-          </div>
-        </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe
-                src="https://player.vimeo.com/video/1204845608?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&dnt=1"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;"
-                title="Regras de Ouro — NR11 - OPERADOR DE TRANSPALETEIRA">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S6_Rules: CONTEÚDO — As 5 Regras de Ouro (Módulo 6) ── -->
-      <section class="slide" id="s6_rules">
-        <div class="top-bar">
-          <span class="section-tag">📚 Fundamentos</span>
-          <div class="slide-title" style="margin-top:6px">As 5 Regras de <span>Ouro</span></div>
-          <div class="slide-subtitle">Regras de Ouro da NR-10 para Segurança Elétrica</div>
-        </div>
-        <div class="content-area rules-slide-content">
-          <div class="rules-carousel">
-            <div class="rules-container">
-              <div class="rule-card rule-card-1">
-                <div class="rule-num">1</div>
-                <div class="rule-body">
-                  <h4>Desligar as fontes de tensão</h4>
-                  <p>Realizar o desligamento e isolamento de todas as fontes de alimentação do circuito elétrico.</p>
-                </div>
-              </div>
-              <div class="rule-card rule-card-2">
-                <div class="rule-num">2</div>
-                <div class="rule-body">
-                  <h4>Impedir a reenergização</h4>
-                  <p>Bloquear fisicamente os dispositivos de manobra (garras, cadeados) para impedir religamentos.</p>
-                </div>
-              </div>
-              <div class="rule-card rule-card-3">
-                <div class="rule-num">3</div>
-                <div class="rule-body">
-                  <h4>Constatar ausência de tensão</h4>
-                  <p>Verificar e certificar a ausência total de energia por meio de testes práticos calibrados.</p>
-                </div>
-              </div>
-              <div class="rule-card rule-card-4">
-                <div class="rule-num">4</div>
-                <div class="rule-body">
-                  <h4>Aterrar e curto-circuitar</h4>
-                  <p>Instalar o aterramento temporário e curto-circuitar as fases para desviar eventuais correntes.</p>
-                </div>
-              </div>
-              <div class="rule-card rule-card-5">
-                <div class="rule-num">5</div>
-                <div class="rule-body">
-                  <h4>Sinalizar os bloqueios</h4>
-                  <p>Fixar avisos, cartões e etiquetas indicando o bloqueio para alertar sobre o trabalho em andamento.</p>
-                </div>
-              </div>
-            </div>
-            <div class="rules-nav">
-              <button type="button" class="rules-nav-btn" id="btn-rules-prev" onclick="prevRuleSlide()" aria-label="Regra anterior">
-                <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
-                  <polygon points="15,3 3,10 15,17" />
-                </svg>
-              </button>
-              <div class="rules-counter" id="rules-counter">1 / 5</div>
-              <button type="button" class="rules-nav-btn" id="btn-rules-next" onclick="nextRuleSlide()" aria-label="Próxima regra">
-                <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
-                  <polygon points="5,3 17,10 5,17" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S6v4: VÍDEO — Conclusão do Treinamento (Módulo 6) ── -->
-      <section class="slide video-slide" id="s6v4">
-        <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Conclusão do <span>Treinamento</span></div>
-            <div class="slide-subtitle">Mensagem Final e Recomendações de Segurança</div>
-          </div>
-        </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe
-                src="https://player.vimeo.com/video/1204869534?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&dnt=1"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;"
-                title="Conclusão do Treinamento — NR11 - OPERADOR DE TRANSPALETEIRA">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S6f: QUIZ — Módulo 6 (Prova Final) ── -->
-      <section class="slide" id="s6f">
-        <div class="top-bar">
-          <span class="section-tag">🏆 PROVA FINAL</span>
-          <div class="slide-title">Avaliação <span>Final</span></div>
-        </div>
-        <div class="content-area mod6-state-intro">
-          <div id="mod6-quiz-intro" class="mod1-game-wrap" style="text-align:center; animation: fadeIn 0.8s ease;">
-            <div class="ic-circle" style="margin: 0 auto 24px; width: 96px; height: 96px; font-size: 48px;">🏆</div>
-            <h3 style="font-family:var(--font-h); font-size:26px; color:var(--white); margin-bottom:12px;">Prova Final ATEX</h3>
-            <p style="color:rgba(255,255,255,0.72); font-size:15px; line-height:1.65; margin-bottom:28px;">
-              Responda <strong>5 perguntas</strong> sobre <strong>LOTO</strong>,
-              <strong>Requisitos da NR-10</strong>, <strong>Regras de Ouro</strong> e <strong>Gestão Multinível</strong> para concluir seu treinamento.
-            </p>
-            <button class="btn-start" style="padding: 16px 40px; font-size: 15px; text-transform: uppercase;"
-              onclick="startMod6Quiz()">INICIAR PROVA</button>
-          </div>
-
-          <div id="mod6-quiz-play" class="mod1-game-wrap quiz-wrap" style="display:none;">
-            <div id="qm6-question-panel">
-              <div class="q-meta">
-                <span id="qm6-counter" class="q-lbl">Pergunta 1 de 5</span>
-                <div class="q-dots" id="qm6-dots">
-                  <div id="qm6dot0" class="qdot2 cur"></div>
-                  <div id="qm6dot1" class="qdot2"></div>
-                  <div id="qm6dot2" class="qdot2"></div>
-                  <div id="qm6dot3" class="qdot2"></div>
-                  <div id="qm6dot4" class="qdot2"></div>
-                </div>
-              </div>
-              <p id="qm6-text" class="q-text">...</p>
-              <div id="qm6-options" class="q-options"></div>
-              <div id="qm6-feedback" class="q-feedback"></div>
-              <button type="button" id="btn-next-qm6" class="btn-next-q" onclick="nextQuestionMod6()">PRÓXIMA PERGUNTA</button>
-            </div>
-
-            <div id="qm6-result-panel" style="display:none; text-align:center;">
-              <div id="qm6-pct" class="result-pct green">100%</div>
-              <div class="r-stars" id="qm6-stars">⭐⭐⭐</div>
-              <div id="qm6-status" class="r-status ap">✅ Treinamento Concluído!</div>
-              <p id="qm6-sub" style="color:rgba(255,255,255,0.85); font-size:15px; line-height:1.55; margin:16px 0 24px;"></p>
-              <button type="button" class="btn-retry" onclick="resetQuizMod6()">REFAZER AVALIAÇÃO</button>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,50 C480,10 960,85 1440,30 L1440,100 L0,100 Z" fill="rgba(23, 195, 178,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S_End: CONCLUSÃO — Treinamento Concluído ── -->
-      <section class="slide" id="s_end">
-        <div class="top-bar">
-          <span class="section-tag" style="background: linear-gradient(135deg, #10b981, #059669);">🎉 CURSO CONCLUÍDO</span>
-          <div class="slide-title" style="margin-top:6px">Parabéns!</div>
-        </div>
-        <div class="content-area end-slide-content">
-          <div class="end-card-wrap">
-            <div class="trophy-badge">🏆</div>
-            <h2>Treinamento Concluído!</h2>
-            <p class="end-subtitle">Você finalizou com sucesso o treinamento de <strong>NR11 - OPERADOR DE TRANSPALETEIRA</strong>.</p>
-            
-            <div class="stats-grid">
-              <div class="stat-item">
-                <span class="stat-icon">📚</span>
-                <span class="stat-label">Módulos</span>
-                <span class="stat-value">6 Concluídos</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-icon">⭐</span>
-                <span class="stat-label">Avaliação</span>
-                <span class="stat-value">Aprovado</span>
-              </div>
-            </div>
-
-            <button type="button" class="btn-restart-course" onclick="restartCourse()">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="margin-right:8px; display:inline-block; vertical-align:middle;">
-                <path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/>
-              </svg>
-              REINICIAR CURSO
-            </button>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,50 C480,10 960,85 1440,30 L1440,100 L0,100 Z" fill="rgba(16,185,129,0.07)" />
-          </svg></div>
-      </section>
-
-    </div><!-- /slides -->
+            </div><!-- /slides -->
 
     <!-- NAV -->
     <div id="nav">
@@ -11617,30 +10183,7 @@
     }
 
     function speakTextWebSpeech(text, playbackId) {
-      if (typeof window === 'undefined' || !window.speechSynthesis) return;
-      window.speechSynthesis.cancel();
-
-      const cleanText = text.replace(/[*#]/g, '');
-      const utterance = new SpeechSynthesisUtterance(cleanText);
-      utterance.lang = 'pt-BR';
-
-      const voices = window.speechSynthesis.getVoices();
-      const ptVoice = voices.find(v => v.lang.includes('pt-BR') || v.lang.includes('pt_BR'));
-      if (ptVoice) utterance.voice = ptVoice;
-
-      utterance.onstart = () => {
-        if (playbackId !== narrationPlaybackId) {
-          window.speechSynthesis.cancel();
-          return;
-        }
-        onNarrationStart();
-      };
-
-      utterance.onend = () => {
-        // Callback no-op
-      };
-
-      window.speechSynthesis.speak(utterance);
+      // Robotized browser speech synthesis disabled as requested.
     }
 
     function onNarrationStart() {
@@ -11727,9 +10270,9 @@
       };
 
       if (entry.audioReady === false || !entry.file) {
-        console.log('Áudio MP3 ElevenLabs não gerado. Utilizando síntese de voz do navegador.');
-        speakTextWebSpeech(entry.text, playbackId);
-        return true;
+        console.log('Áudio MP3 ElevenLabs não gerado para o slide:', slide.id);
+        showNarrationError('Locução em áudio oficial ainda não disponível para este slide.');
+        return false;
       }
 
       const mp3Ok = await tryPlayMp3(audio, entry.file, playbackId);
@@ -11737,9 +10280,9 @@
 
       if (mp3Ok) return true;
 
-      console.log('Não foi possível reproduzir o MP3 ElevenLabs. Utilizando síntese de voz do navegador.');
-      speakTextWebSpeech(entry.text, playbackId);
-      return true;
+      console.log('Não foi possível reproduzir o MP3 ElevenLabs.');
+      showNarrationError('Erro ao carregar locução em áudio do slide.');
+      return false;
     }
 
     async function toggleAccessibilityNarration() {
@@ -13108,54 +11651,180 @@
     let mod1GameMistakes = 0;
     let mod1GameBusy = false;
 
-    const mod1TetraZoneMeta = {
-      objective: { icon: '🎯', label: 'Objetivo' },
-      nr11: { icon: '📋', label: 'NR 11' },
-      operator: { icon: '👷', label: 'Requisitos' },
-      docs: { icon: '🪪', label: 'Documentação' }
-    };
-
     const mod1GameDeck = [
       {
-        text: 'Qual é o foco principal de capacitar o operador para o uso seguro e eficiente do equipamento?',
-        zone: 'objective',
-        tip: 'Correto! O Objetivo do Treinamento é capacitar para o uso seguro e eficiente, evitando acidentes e danos.'
+        text: 'De acordo com a NR 11, o que deve ser indicado de forma visível em todo equipamento de transporte de materiais?',
+        options: [
+          { key: 'A', text: 'A data do próximo exame médico obrigatório do operador.' },
+          { key: 'B', text: 'A carga máxima de trabalho permitida (limite que nunca deve ser ultrapassado).' },
+          { key: 'C', text: 'O nome completo do fabricante e a cor da máquina.' }
+        ],
+        correct: 'B',
+        tip: 'Muito bem! Por lei, é obrigatório indicar a carga máxima de trabalho em local visível, e este limite nunca deve ser ultrapassado.'
       },
       {
-        text: 'Estabelece as normas de segurança para a operação de equipamentos de transporte e movimentação de materiais.',
-        zone: 'nr11',
-        tip: 'Isso mesmo! A NR 11 define os requisitos de segurança para transporte, movimentação, armazenagem e manuseio de materiais.'
+        text: 'Para dirigir a transpaleteira durante todo o horário de trabalho, qual é a exigência legal sobre o crachá?',
+        options: [
+          { key: 'A', text: 'Portar o cartão de identificação com seu nome e foto em local bem visível.' },
+          { key: 'B', text: 'Guardar a autorização física dentro da carteira pessoal no bolso.' },
+          { key: 'C', text: 'Exibir a autorização digital apenas quando for solicitado pela fiscalização.' }
+        ],
+        correct: 'A',
+        tip: 'Perfeito! A NR 11 exige que o crachá com seu nome e foto esteja em local bem visível durante todo o expediente de trabalho.'
       },
       {
-        text: 'O que o operador precisa cumprir, como estar apto medicalmente, possuir treinamento e fazer reciclagens anuais?',
-        zone: 'operator',
-        tip: 'Correto! Estes são os Requisitos do Operador para atuar legalmente e em segurança.'
-      },
-      {
-        text: 'O cartão de identificação com validade de 1 ano que o operador deve portar obrigatoriamente em local visível.',
-        zone: 'docs',
-        tip: 'Isso! Trata-se da Habilitação e Documentação obrigatória do operador.'
+        text: 'Qual é o prazo de validade da autorização e quem é o responsável por acompanhar esse vencimento?',
+        options: [
+          { key: 'A', text: 'A validade é vitalícia e não necessita de exames ou acompanhamento.' },
+          { key: 'B', text: 'A validade é de 1 ano, sendo o próprio operador o responsável por monitorar a data e avisar a chefia.' },
+          { key: 'C', text: 'A validade é de 3 anos, cabendo exclusivamente ao RH da empresa monitorar.' }
+        ],
+        correct: 'B',
+        tip: 'Excepcional! O cartão é válido por exatamente 1 ano. O operador deve ser proativo e avisar a chefia quando estiver perto do vencimento.'
       }
     ];
 
     function renderMod1GameZones() {
       const container = document.getElementById('mod1-game-zones');
       if (!container) return;
-      container.className = 'mod1-game-zones';
       container.innerHTML = '';
-      Object.entries(mod1TetraZoneMeta).forEach(([key, data]) => {
+      
+      const item = mod1GameDeck[mod1GameIdx];
+      item.options.forEach((opt) => {
         const btn = document.createElement('button');
         btn.type = 'button';
-        btn.className = 'mod1-game-btn zone-' + key;
-        btn.innerHTML = '<span>' + data.icon + '</span>' + data.label;
-        btn.addEventListener('click', () => handleMod1GameChoice(key));
+        btn.className = 'mod1-game-btn';
+        btn.innerHTML = '<span class="opt-letter">' + opt.key + '</span>' + opt.text;
+        btn.addEventListener('click', () => handleMod1GameChoice(opt.key));
         container.appendChild(btn);
       });
     }
 
-    function getMod1ZoneLabel(item) {
-      const z = mod1TetraZoneMeta[item.zone];
-      return z ? z.icon + ' ' + z.label : item.zone;
+    function renderMod1GameCard() {
+      const total = mod1GameDeck.length;
+      const card = document.getElementById('mod1-game-card');
+      const fb = document.getElementById('mod1-game-feedback');
+
+      if (mod1GameIdx >= total) {
+        finishMod1Game();
+        return;
+      }
+
+      const item = mod1GameDeck[mod1GameIdx];
+      document.getElementById('mod1-game-text').textContent = item.text;
+      document.getElementById('mod1-game-counter').textContent = (mod1GameIdx + 1) + ' / ' + total;
+      document.getElementById('mod1-game-bar').style.width = (mod1GameIdx / total * 100) + '%';
+      
+      renderMod1GameZones();
+      if (fb) { fb.textContent = ''; fb.style.display = 'none'; }
+      if (card) {
+        card.classList.remove('mod1-game-ok');
+        card.style.animation = 'fadeIn 0.35s ease';
+      }
+      mod1GameBusy = false;
+      requestAnimationFrame(syncMod1GameVerticalLayout);
+    }
+
+    function handleMod1GameChoice(key) {
+      if (mod1GameBusy || mod1GameIdx >= mod1GameDeck.length) return;
+      mod1GameBusy = true;
+
+      const item = mod1GameDeck[mod1GameIdx];
+      const fb = document.getElementById('mod1-game-feedback');
+      const buttons = document.querySelectorAll('#mod1-game-play .mod1-game-btn');
+      
+      // Find clicked button
+      let clickedBtn = null;
+      buttons.forEach(btn => {
+        const badge = btn.querySelector('.opt-letter');
+        if (badge && badge.textContent === key) {
+          clickedBtn = btn;
+        }
+      });
+
+      buttons.forEach(b => b.disabled = true);
+
+      if (key === item.correct) {
+        playGameFeedback('ok');
+        if (clickedBtn) {
+          clickedBtn.classList.add('correct-option');
+        }
+        if (fb) {
+          fb.style.display = 'block';
+          fb.className = 'mod1-game-feedback ok';
+          fb.textContent = '✓ ' + (item.tip || 'Correto!');
+        }
+        mod1GameIdx++;
+        setTimeout(() => {
+          buttons.forEach(b => b.disabled = false);
+          renderMod1GameCard();
+        }, 3000); // 3 seconds for reading the tip
+      } else {
+        playGameFeedback('nok');
+        mod1GameMistakes++;
+        if (clickedBtn) {
+          clickedBtn.classList.add('incorrect-option');
+        }
+        if (fb) {
+          fb.style.display = 'block';
+          fb.className = 'mod1-game-feedback err';
+          fb.textContent = '✗ Resposta incorreta. Tente novamente!';
+        }
+        const card = document.getElementById('mod1-game-card');
+        if (card) {
+          card.style.animation = 'none';
+          card.offsetHeight;
+          card.style.animation = 'shake 0.4s ease';
+        }
+        setTimeout(() => {
+          buttons.forEach(b => {
+            if (!b.classList.contains('incorrect-option')) {
+              b.disabled = false;
+            }
+          });
+          mod1GameBusy = false;
+        }, 800);
+      }
+    }
+
+    function finishMod1Game() {
+      mod1_game_done = true;
+      document.getElementById('mod1-game-bar').style.width = '100%';
+      document.getElementById('mod1-game-play').style.display = 'none';
+      document.getElementById('mod1-game-result').style.display = 'block';
+      setMod1GameLayout('result');
+      const msg = document.getElementById('mod1-game-result-msg');
+      if (msg) {
+        msg.textContent = mod1GameMistakes === 0
+          ? 'Excelente! Você acertou todas as perguntas e demonstrou total domínio sobre a NR-11.'
+          : 'Quiz concluído! Você concluiu com ' + mod1GameMistakes + ' erro(s). Revise os pontos de carga máxima, porte do cartão e validade de exames.';
+      }
+      updateNextButton();
+    }
+
+    function resetMod1Game() {
+      mod1_game_done = false;
+      mod1GameIdx = 0;
+      mod1GameMistakes = 0;
+      mod1GameBusy = false;
+      document.getElementById('mod1-game-intro').style.display = 'block';
+      document.getElementById('mod1-game-play').style.display = 'none';
+      document.getElementById('mod1-game-result').style.display = 'none';
+      setMod1GameLayout('intro');
+      updateNextButton();
+    }
+
+    function startMod1Game() {
+      mod1GameIdx = 0;
+      mod1GameMistakes = 0;
+      mod1GameBusy = false;
+      mod1_game_done = false;
+      document.getElementById('mod1-game-intro').style.display = 'none';
+      document.getElementById('mod1-game-play').style.display = 'block';
+      document.getElementById('mod1-game-result').style.display = 'none';
+      setMod1GameLayout('play');
+      renderMod1GameCard();
+      updateNextButton();
     }
 
     function setMod1GameLayout(state) {
@@ -13181,232 +11850,11 @@
       }
     }
 
-    function syncS3dTableFit(slide) {
-      const area = slide.querySelector('.content-area');
-      const wrap = slide.querySelector('.s3a-wrap');
-      const grid = slide.querySelector('.s3d-zones-grid');
-      if (!area || !wrap || !grid) return;
+    function syncS3dTableFit(slide) {}
+    function syncS3bTableFit(slide) {}
+    function syncS3SlidesLayout() {}
 
-      const isDesktop = window.innerWidth > 768;
-      area.classList.remove('s3-scroll-mode');
-      area.scrollTop = 0;
 
-      if (!isDesktop) {
-        grid.style.removeProperty('--s3d-fit');
-        area.classList.remove('s3-scroll-mode');
-        return;
-      }
-
-      const fits = () => wrap.scrollHeight + 8 <= area.clientHeight;
-      const minFit = 0.82;
-      const step = 0.015;
-
-      grid.style.setProperty('--s3d-fit', '1');
-      if (fits()) return;
-
-      let fit = 1;
-      for (let f = 1 - step; f >= minFit; f -= step) {
-        fit = Math.round(f * 1000) / 1000;
-        grid.style.setProperty('--s3d-fit', String(fit));
-        if (fits()) break;
-      }
-
-      if (!fits()) {
-        area.classList.add('s3-scroll-mode');
-      }
-    }
-
-    function syncS3SlidesLayout() {
-      const s3dSlide = document.getElementById('s3d');
-      const s3dGrid = s3dSlide?.querySelector('.s3d-zones-grid');
-      if (s3dGrid && !s3dSlide.classList.contains('active')) {
-        s3dGrid.style.removeProperty('--s3d-fit');
-      }
-
-      const s3bSlide = document.getElementById('s3b');
-      const s3bGrid = s3bSlide?.querySelector('.s3a-class-grid');
-      if (s3bGrid && !s3bSlide.classList.contains('active')) {
-        s3bGrid.style.removeProperty('--s3b-fit');
-      }
-
-      ['s3a', 's3b', 's3d'].forEach((id) => {
-        const slide = document.getElementById(id);
-        if (!slide || !slide.classList.contains('active')) return;
-        const area = slide.querySelector('.content-area');
-        const wrap = slide.querySelector('.s3a-wrap');
-        if (!area || !wrap) return;
-
-        if (id === 's3d') {
-          syncS3dTableFit(slide);
-          return;
-        }
-
-        if (id === 's3b') {
-          syncS3bTableFit(slide);
-          return;
-        }
-
-        if (id === 's3a' && window.innerWidth <= 768) {
-          area.classList.remove('s3-scroll-mode');
-          return;
-        }
-
-        area.classList.remove('s3-scroll-mode');
-        if (wrap.scrollHeight + 12 > area.clientHeight) {
-          area.classList.add('s3-scroll-mode');
-          area.scrollTop = 0;
-        }
-      });
-    }
-
-    function startMod1Game() {
-      mod1GameIdx = 0;
-      mod1GameMistakes = 0;
-      mod1GameBusy = false;
-      mod1_game_done = false;
-      document.getElementById('mod1-game-intro').style.display = 'none';
-      document.getElementById('mod1-game-play').style.display = 'block';
-      document.getElementById('mod1-game-result').style.display = 'none';
-      setMod1GameLayout('play');
-      renderMod1GameCard();
-      updateNextButton();
-    }
-
-    function renderMod1GameCard() {
-      const total = mod1GameDeck.length;
-      const card = document.getElementById('mod1-game-card');
-      const fb = document.getElementById('mod1-game-feedback');
-      const phaseTag = document.getElementById('mod1-game-phase-tag');
-
-      if (mod1GameIdx >= total) {
-        finishMod1Game();
-        return;
-      }
-
-      const item = mod1GameDeck[mod1GameIdx];
-      document.getElementById('mod1-game-text').textContent = item.text;
-      document.getElementById('mod1-game-counter').textContent = (mod1GameIdx + 1) + ' / ' + total;
-      document.getElementById('mod1-game-bar').style.width = (mod1GameIdx / total * 100) + '%';
-      if (phaseTag) phaseTag.textContent = 'Tetraedro do Fogo';
-      renderMod1GameZones();
-      if (fb) { fb.textContent = ''; fb.style.color = ''; }
-      if (card) {
-        card.classList.remove('mod1-game-ok');
-        card.style.animation = 'fadeIn 0.35s ease';
-      }
-      mod1GameBusy = false;
-      requestAnimationFrame(syncMod1GameVerticalLayout);
-    }
-
-    function handleMod1GameChoice(zone) {
-      if (mod1GameBusy || mod1GameIdx >= mod1GameDeck.length) return;
-      mod1GameBusy = true;
-
-      const item = mod1GameDeck[mod1GameIdx];
-      const card = document.getElementById('mod1-game-card');
-      const fb = document.getElementById('mod1-game-feedback');
-      const buttons = document.querySelectorAll('#mod1-game-play .mod1-game-btn');
-      buttons.forEach(b => b.disabled = true);
-
-      if (zone === item.zone) {
-        playGameFeedback('ok');
-        if (fb) {
-          fb.textContent = '✓ ' + (item.tip || 'Correto!');
-          fb.style.color = '#2ecc71';
-        }
-        if (card) card.classList.add('mod1-game-ok');
-        mod1GameIdx++;
-        setTimeout(() => {
-          buttons.forEach(b => b.disabled = false);
-          renderMod1GameCard();
-        }, 700);
-      } else {
-        playGameFeedback('nok');
-        mod1GameMistakes++;
-        if (fb) {
-          fb.textContent = '✗ Era ' + getMod1ZoneLabel(item);
-          fb.style.color = 'var(--red)';
-        }
-        if (card) {
-          card.style.animation = 'none';
-          card.offsetHeight;
-          card.style.animation = 'shake 0.4s ease';
-        }
-        setTimeout(() => {
-          buttons.forEach(b => b.disabled = false);
-          mod1GameBusy = false;
-        }, 500);
-      }
-    }
-
-    function finishMod1Game() {
-      mod1_game_done = true;
-      document.getElementById('mod1-game-bar').style.width = '100%';
-      document.getElementById('mod1-game-play').style.display = 'none';
-      document.getElementById('mod1-game-result').style.display = 'block';
-      setMod1GameLayout('result');
-      const msg = document.getElementById('mod1-game-result-msg');
-      if (msg) {
-        msg.textContent = mod1GameMistakes === 0
-          ? 'Excelente! Você identificou corretamente os quatro elementos do Tetraedro do Fogo.'
-          : 'Desafio concluído com ' + mod1GameMistakes + ' tentativa(s) a mais. Revise Combustível, Comburente, Energia de Ativação e Reação em Cadeia.';
-      }
-      updateNextButton();
-    }
-
-    function resetMod1Game() {
-      mod1_game_done = false;
-      mod1GameIdx = 0;
-      mod1GameMistakes = 0;
-      mod1GameBusy = false;
-      document.getElementById('mod1-game-intro').style.display = 'block';
-      document.getElementById('mod1-game-play').style.display = 'none';
-      document.getElementById('mod1-game-result').style.display = 'none';
-      setMod1GameLayout('intro');
-      updateNextButton();
-    }
-
-    /* ══════════════════════════════════════════
-       QUIZ MÓDULO 1
-       ══════════════════════════════════════════ */
-    const q1_questions = [
-      {
-        q: 'O que é a PEMT (Plataforma Elevatória Móvel de Trabalho)?',
-        opts: [
-          'Equipamento móvel com cesto de trabalho, sustentado por haste ou tesoura, para erguer o trabalhador com segurança',
-          'Veículo autopropelido usado apenas para transporte horizontal de materiais',
-          'Equipamento fixo instalado permanentemente em edifícios',
-          'Ferramenta manual para içamento de cargas no solo'
-        ],
-        correct: 0,
-        feedback_ok: '✅ Correto! A PEMT ergue você para locais elevados com máxima segurança.',
-        feedback_nok: '❌ Incorreto. A PEMT é móvel, tem cesto de trabalho e sustenta-se por haste ou tesoura.'
-      },
-      {
-        q: 'Quais modelos de plataformas elevatórias você pode encontrar no dia a dia da obra?',
-        opts: [
-          'Mastro, Telescópica, Tesoura e Articulada',
-          'Guindaste, Empilhadeira, Betoneira e Grua',
-          'Fixa, Suspensa, Flutuante e Industrial',
-          'Vertical, Horizontal, Inclinada e Circular'
-        ],
-        correct: 0,
-        feedback_ok: '✅ Isso mesmo! Cada modelo tem sua especialidade, mas todos priorizam proteger sua vida no trabalho aéreo.',
-        feedback_nok: '❌ Incorreto. Os modelos citados são: Mastro, Telescópica, Tesoura e Articulada.'
-      },
-      {
-        q: 'Sobre os requisitos de fornecimento e manuais da PEMT, qual afirmativa está correta?',
-        opts: [
-          'A máquina deve ser inspecionada antes da entrega; manuais disponíveis no local e avisos em português',
-          'A inspeção só é necessária após o primeiro uso na obra',
-          'Os manuais podem ficar arquivados na sede da locadora',
-          'Os avisos de segurança podem estar em qualquer idioma'
-        ],
-        correct: 0,
-        feedback_ok: '✅ Correto! Segurança começa antes de subir no cesto: inspeção, manuais acessíveis e avisos em português.',
-        feedback_nok: '❌ Incorreto. A norma exige inspeção prévia, manuais no local de uso e avisos em língua portuguesa.'
-      }
-    ];
 
     let q1_idx = 0, q1_ans = false, q1_score = 0;
 
