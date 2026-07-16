@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-03T17:40:47.558Z",
+  "generatedAt": "2026-07-07T12:30:27.541Z",
   "source": "index.html",
   "audioDir": "audios",
   "slides": [
@@ -114,6 +114,14 @@
       "title": "Componentes Principais da Transpaleteira",
       "file": "audios/s-mod2-video3.mp3",
       "text": "Vídeo. Componentes Principais da Transpaleteira. Conhecendo o Equipamento. Assista ao vídeo sobre os componentes principais da transpaleteira. Avance quando concluir.",
+      "audioReady": false
+    },
+    {
+      "index": 14,
+      "id": "s-mod2-video4",
+      "title": "O Painel de Controle e a Chave de Contato",
+      "file": "audios/s-mod2-video4.mp3",
+      "text": "Vídeo. O Painel de Controle e a Chave de Contato. Conhecendo o Equipamento. Assista ao vídeo sobre o painel de controle e a chave de contato. Avance quando concluir.",
       "audioReady": false
     }
   ]

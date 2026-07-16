@@ -43,6 +43,8 @@ const NARRATION_OVERRIDES = {
     'Vídeo. Transpaleteiras Elétricas e Tripuladas. Conhecendo o Equipamento. Assista ao vídeo sobre as transpaleteiras elétricas e tripuladas. Avance quando concluir.',
   's-mod2-video3':
     'Vídeo. Componentes Principais da Transpaleteira. Conhecendo o Equipamento. Assista ao vídeo sobre os componentes principais da transpaleteira. Avance quando concluir.',
+  's-mod2-video4':
+    'Vídeo. O Painel de Controle e a Chave de Contato. Conhecendo o Equipamento. Assista ao vídeo sobre o painel de controle e a chave de contato. Avance quando concluir.',
 };
 
 function cleanText(text) {
