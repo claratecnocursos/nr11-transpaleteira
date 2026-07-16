@@ -35,6 +35,14 @@ const NARRATION_OVERRIDES = {
     'Vídeo. Validade do Cartão e Responsabilidade do Operador. Fundamentos, Legislação e Requisitos. Assista ao vídeo sobre a validade do cartão de identificação e a responsabilidade do operador. Avance quando concluir.',
   s2d: null,
   s2e: null, // montado a partir do deck do jogo Módulo 1
+  's-mod2':
+    'Início do Módulo 2. Conhecendo o Equipamento.',
+  's-mod2-video':
+    'Vídeo. Conhecendo a Transpaleteira. Conhecendo o Equipamento. Assista ao vídeo sobre os componentes principais e o funcionamento da transpaleteira. Avance quando concluir.',
+  's-mod2-video2':
+    'Vídeo. Transpaleteiras Elétricas e Tripuladas. Conhecendo o Equipamento. Assista ao vídeo sobre as transpaleteiras elétricas e tripuladas. Avance quando concluir.',
+  's-mod2-video3':
+    'Vídeo. Componentes Principais da Transpaleteira. Conhecendo o Equipamento. Assista ao vídeo sobre os componentes principais da transpaleteira. Avance quando concluir.',
 };
 
 function cleanText(text) {

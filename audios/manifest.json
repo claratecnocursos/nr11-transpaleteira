@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-02T14:52:42.998Z",
+  "generatedAt": "2026-07-03T17:40:47.558Z",
   "source": "index.html",
   "audioDir": "audios",
   "slides": [
@@ -10,7 +10,7 @@
       "title": "NR-11 —OPERADOR DE TRANSPALETEIRA",
       "file": "audios/s1.mp3",
       "text": "Módulo de Treinamento. Segurança do Trabalho. NR11 - OPERADOR DE TRANSPALETEIRA. Capacitação em movimentação, armazenagem e manuseio de materiais com transpaleteira conforme NR-11.",
-      "audioReady": false
+      "audioReady": true
     },
     {
       "index": 1,
@@ -18,7 +18,7 @@
       "title": "Bem-vindo ao Treinamento",
       "file": "audios/s2.mp3",
       "text": "Apresentação. Bem-vindo ao Treinamento. NR11 - OPERADOR DE TRANSPALETEIRA. Assista ao vídeo de introdução e avance quando concluir.",
-      "audioReady": false
+      "audioReady": true
     },
     {
       "index": 2,
@@ -26,7 +26,7 @@
       "title": "Conteúdo Programático",
       "file": "audios/s6.mp3",
       "text": "Sumário. Conteúdo Programático. Módulo 1: Fundamentos, Legislação e Requisitos. Módulo 2: Conhecendo o Equipamento. Módulo 3: Procedimentos Operacionais e Operação Segura. Módulo 4: Movimentação, Cargas e Armazenamento. Módulo 5: Manutenção e Segurança com Baterias. Módulo 6: Gestão de Riscos, Emergências e EPIs.",
-      "audioReady": false
+      "audioReady": true
     },
     {
       "index": 3,
@@ -34,7 +34,7 @@
       "title": "MÓDULO 1",
       "file": "audios/s-mod1.mp3",
       "text": "Início do Módulo 1. Fundamentos, Legislação e Requisitos.",
-      "audioReady": false
+      "audioReady": true
     },
     {
       "index": 4,
@@ -82,6 +82,38 @@
       "title": "Legislação e Requisitos",
       "file": "audios/s2e.mp3",
       "text": "Desafio. Tetraedro do Fogo. Desafio ATEX — Módulo 1. Classifique quatro situações nos elementos do Tetraedro do Fogo: Combustível, Comburente, Energia de Ativação e Reação em Cadeia. Toque na opção correta para avançar. Conclua o desafio para validar o módulo. Situação 1: De acordo com a NR 11, o que deve ser indicado de forma visível em todo equipamento de transporte de materiais? Resposta correta: undefined. Muito bem! Por lei, é obrigatório indicar a carga máxima de trabalho em local visível, e este limite nunca deve ser ultrapassado. Situação 2: Para dirigir a transpaleteira durante todo o horário de trabalho, qual é a exigência legal sobre o crachá? Resposta correta: undefined. Perfeito! A NR 11 exige que o crachá com seu nome e foto esteja em local bem visível durante todo o expediente de trabalho. Situação 3: Qual é o prazo de validade da autorização e quem é o responsável por acompanhar esse vencimento? Resposta correta: undefined. Excepcional! O cartão é válido por exatamente 1 ano. O operador deve ser proativo e avisar a chefia quando estiver perto do vencimento.",
+      "audioReady": false
+    },
+    {
+      "index": 10,
+      "id": "s-mod2",
+      "title": "MÓDULO 2",
+      "file": "audios/s-mod2.mp3",
+      "text": "Início do Módulo 2. Conhecendo o Equipamento.",
+      "audioReady": false
+    },
+    {
+      "index": 11,
+      "id": "s-mod2-video",
+      "title": "Conhecendo a Transpaleteira",
+      "file": "audios/s-mod2-video.mp3",
+      "text": "Vídeo. Conhecendo a Transpaleteira. Conhecendo o Equipamento. Assista ao vídeo sobre os componentes principais e o funcionamento da transpaleteira. Avance quando concluir.",
+      "audioReady": false
+    },
+    {
+      "index": 12,
+      "id": "s-mod2-video2",
+      "title": "Transpaleteiras Elétricas e Tripuladas",
+      "file": "audios/s-mod2-video2.mp3",
+      "text": "Vídeo. Transpaleteiras Elétricas e Tripuladas. Conhecendo o Equipamento. Assista ao vídeo sobre as transpaleteiras elétricas e tripuladas. Avance quando concluir.",
+      "audioReady": false
+    },
+    {
+      "index": 13,
+      "id": "s-mod2-video3",
+      "title": "Componentes Principais da Transpaleteira",
+      "file": "audios/s-mod2-video3.mp3",
+      "text": "Vídeo. Componentes Principais da Transpaleteira. Conhecendo o Equipamento. Assista ao vídeo sobre os componentes principais da transpaleteira. Avance quando concluir.",
       "audioReady": false
     }
   ]
